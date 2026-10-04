@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" fill="#1a1a2e"/>
+  <!-- 星星 -->
+  <g fill="#FFD700">
+    <polygon points="100,20 110,40 130,40 115,55 120,75 100,62 80,75 85,55 70,40 90,40" opacity="0.9"/>
+    <polygon points="50,80 55,90 65,90 58,97 60,107 50,100 40,107 42,97 35,90 45,90" opacity="0.7"/>
+    <polygon points="150,70 155,80 165,80 158,87 160,97 150,90 140,97 142,87 135,80 145,80" opacity="0.8"/>
+    <circle cx="30" cy="120" r="3" opacity="0.6"/>
+    <circle cx="170" cy="110" r="3" opacity="0.6"/>
+    <circle cx="80" cy="150" r="2" opacity="0.5"/>
+    <circle cx="120" cy="140" r="2" opacity="0.5"/>
+  </g>
+  <!-- 月亮 -->
+  <circle cx="160" cy="40" r="20" fill="#F5F5DC"/>
+  <circle cx="155" cy="35" r="18" fill="#1a1a2e"/>
+  <!-- 1 号方块 -->
+  <g transform="translate(70, 120)">
+    <rect x="0" y="0" width="35" height="35" rx="7" fill="#e53935"/>
+    <circle cx="12" cy="14" r="3.5" fill="#fff"/>
+    <circle cx="23" cy="14" r="3.5" fill="#fff"/>
+    <circle cx="13" cy="15" r="1.8" fill="#23233a"/>
+    <circle cx="22" cy="15" r="1.8" fill="#23233a"/>
+    <path d="M 10 23 Q 17.5 29 25 23" stroke="#23233a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

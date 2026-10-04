@@ -50,6 +50,7 @@ main{max-width:1180px;margin:0 auto;padding:12px 20px 48px}
 .card{background:#fff;border-radius:20px;padding:18px 18px 16px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 4px 14px rgba(30,30,60,.06);transition:transform .18s,box-shadow .18s;border:2px solid #f0f0f5;cursor:pointer}
 .card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(30,30,60,.12);border-color:#e0e0e0}
 .num{flex:none;width:48px;height:48px;border-radius:15px;color:#fff;font-weight:900;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -4px 0 rgba(0,0,0,.14)}
+.num-img{flex:none;width:48px;height:48px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
 .info{min-width:0}
 .info .en{font-weight:800;font-size:16px;line-height:1.35;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .info .cn{color:#8a8fa3;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -65,6 +66,9 @@ main{max-width:1180px;margin:0 auto;padding:12px 20px 48px}
 footer{margin-top:64px;background:#f0f2f8;color:#5a5a70;text-align:center;padding:40px 20px;font-size:14px;line-height:2;font-weight:600}
 footer a{color:#e53935;font-weight:800}
 footer .warn{opacity:.7;max-width:760px;margin:0 auto}
+/* hero image */
+.hero-img{margin-top:36px;position:relative;z-index:2}
+.hero-img img{border-radius:20px;box-shadow:0 12px 32px rgba(0,0,0,.12);max-width:100%;height:auto}
 </style>
 </head>
 <body>
@@ -82,6 +86,9 @@ footer .warn{opacity:.7;max-width:760px;margin:0 auto}
   <div class="search">
     <span class="icon">🔍</span>
     <input id="q" type="text" placeholder="搜索剧集… 比如：彩虹 / Seven / 翻倍" autocomplete="off">
+  </div>
+  <div class="hero-img">
+    <img src="assets/scene-rainbow.svg" alt="Numberblocks 彩虹数字乐园" width="400" height="200">
   </div>
 </header>
 
@@ -117,7 +124,7 @@ function cardHTML(e){
   if(e.musical) tags += '<span class="tag">🎵 音乐集</span>';
   if(e.full) tags += '<span class="tag full">完整版</span>';
   return `<a class="card" href="${e.url}" target="_blank" rel="noopener">
-    <div class="num" style="background:${color}">${e.n}</div>
+    <img class="num-img" src="assets/block-${e.s}.svg" alt="Numberblock ${e.n}" width="48" height="48">
     <div class="info"><div class="en">${e.en}</div><div class="cn">${e.cn}</div>
     ${tags?`<div class="tags">${tags}</div>`:''}</div></a>`;
 }
