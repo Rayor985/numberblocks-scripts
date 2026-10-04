@@ -45,6 +45,12 @@ main{max-width:760px;margin:0 auto;padding:24px 18px 8px}
 .note{background:#eef4ff;border:1px solid #d3e2ff;border-radius:12px;padding:14px 17px;color:#3c5a99;font-size:14px;margin-bottom:14px;line-height:1.85}
 hr.sep{border:none;border-top:1px solid var(--line);margin:26px 0}
 p.para{margin:0 4px 14px;font-size:15.5px;line-height:1.85}
+/* 剧集配图 */
+.hero-img{max-width:800px;margin:22px auto 0;padding:0 18px}
+.hero-img img{width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(30,30,60,.18);display:block}
+figure.inline-img{margin:26px 4px}
+figure.inline-img img{width:100%;border-radius:16px;box-shadow:0 6px 20px rgba(30,30,60,.12);display:block}
+figure.inline-img figcaption{text-align:center;color:var(--muted);font-size:13.5px;margin-top:10px;line-height:1.7}
 /* 上下集 */
 .prevnext{display:flex;gap:12px;margin:32px 0 8px}
 .prevnext a{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 15px;font-size:13.5px;box-shadow:0 2px 8px rgba(30,30,60,.05)}
@@ -62,8 +68,3 @@ footer a{color:#3c5a99;font-weight:600}
   main{padding:18px 14px 6px}
   .prevnext{flex-direction:column}
 }
-
-/* 场景插图 */
-.scene-img{margin:20px 0;text-align:center}
-.scene-img img{border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.1);max-width:100%;height:auto}
-.scene-img .caption{margin-top:8px;font-size:13px;color:var(--muted);font-style:italic}
