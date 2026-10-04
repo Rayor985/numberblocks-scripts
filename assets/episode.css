@@ -67,4 +67,9 @@ footer a{color:#3c5a99;font-weight:600}
   .bubble{padding:11px 13px}
   main{padding:18px 14px 6px}
   .prevnext{flex-direction:column}
+  /* 手机端图片更紧凑：裁成 16:10 宽幅，避免过高 */
+  .hero-img{padding:0 14px;margin-top:16px}
+  figure.inline-img{margin:20px 0}
+  figure.inline-img img{aspect-ratio:16/10;object-fit:cover}
+  figure.inline-img figcaption{font-size:12.5px;margin-top:8px}
 }
