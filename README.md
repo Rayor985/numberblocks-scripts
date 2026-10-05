@@ -1,7 +1,7 @@
 # Numberblocks 中英对照剧本 | Bilingual Scripts
 
-Numberblocks 第 1–7 季全部 150 集的中英对照剧本，每集一个文件。
-Bilingual (Chinese–English) scripts for all 150 episodes of Numberblocks Series 1–7, one file per episode.
+Numberblocks 第 1–9 季全部 185 集的中英对照剧本，每集一个文件。
+Bilingual (Chinese–English) scripts for all 185 episodes of Numberblocks Series 1–9, one file per episode.
 
 ## 目录 Structure
 
@@ -14,6 +14,8 @@ Bilingual (Chinese–English) scripts for all 150 episodes of Numberblocks Serie
 | Series 5（2021） | 30 | [series-5](series-5) |
 | Series 6（2024） | 15 | [series-6](series-6) |
 | Series 7（2024） | 15 | [series-7](series-7) |
+| Series 8（2025–2026） | 30 | [series-8](series-8) |
+| Series 9（2026） | 5 | [series-9](series-9) |
 
 每集包含：英文标题 + 中文标题、剧情简介（中英）、角色、剧本对白（中英对照）。
 Each episode includes: English + Chinese title, bilingual synopsis, characters, and bilingual dialogue.
