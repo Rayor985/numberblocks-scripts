@@ -16,12 +16,24 @@
 
 **Twelve（十二）:** Six and six for me. / 我这边是六和六。
 
+**Sixteen（十六）:** Eight and eight—I'm the biggest even here! / 八加八——我是这里最大的偶数！
+
 **Fourteen（十四）:** Seven and seven—still even! / 七加七——依然是偶数！
 
 **Five（五号）:** Five gives two and two... with one left over. / 五分成二和二……还剩一个。
 
 **Seven（七号）:** And I have one left over too. / 我也剩下一个。
 
+**Five（五号）:** Poor little one, all alone! / 可怜的小家伙，孤零零的！
+
 **Infinaughty（无穷大）:** Odd numbers always leave one behind. / 奇数总会剩下一个。
+
+**Eight（八号）:** So evens share nicely, odds keep one aside! / 偶数分得美，奇数留一个！
+
+*（光束再闪，偶数们整齐列队 / The beam flashes and the evens line up neatly）*
+
+**All（大家）:** 🎵 Even Steven, split so neat, / 🎵 偶数分，分得齐，
+
+**All（大家）:** 🎵 Two halves the same—what a treat! / 🎵 两半一样——真整齐！
 
 **All（大家）:** Two equal halves: that's an even split! / 两份一样多：这就是均匀分割！

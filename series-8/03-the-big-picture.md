@@ -6,20 +6,32 @@
 
 **剧本 Script:**
 
-*（画室里放着一块空白的大画布 / A blank canvas waits in the art room）*
+*（画室里放着一块空白的大画布 / A big blank canvas waits in the art room）*
 
-**Twenty（二十）:** Our picture has holes. Let's fill every square! / 我们的画上有洞，把每个格子都填满吧！
+**Twenty（二十）:** Our big picture has holes! Let's fill every square! / 我们的大画面有洞！把每个格子都填满吧！
 
-**Four（四号）:** Four little squares fit across, and four fit down. / 横着能放四个小方块，竖着也能放四个。
+**Four（四号）:** Look — four squares fit across, and four fit down! / 看——横着能放四个，竖着也能放四个！
 
-**Three（三号）:** Four across and four down makes sixteen squares. / 四乘四，一共十六个小方块。
+**Three（三号）:** Four rows of four! Let me count: 4, 8, 12, 16! / 四行，每行四个！我来数：4、8、12、16！
 
-**Seventeen（十七）:** I count seventeen tiles in my part of the picture! / 我这块图案里数出了十七块！
+**One（一号）:** Sixteen little squares! One for me, one for you! / 十六个小方块！一块给你，一块给我！
 
-**One（一号）:** Every tile covers one bit of space. / 每一块都盖住一小片地方。
+**Seventeen（十七）:** My part is trickier — I count seventeen tiles! / 我这部分更难——我数出了十七块！
 
-**Four（四号）:** Area is how much space a shape covers. / 面积就是图形所占地方的大小。
+**Three（三号）:** Seventeen is one more than sixteen! / 十七比十六多一块！
 
-*（最后一块拼好，整幅画完整亮起 / The last piece clicks in and the picture lights up）*
+**Four（四号）:** Area is how much space a shape covers! / 面积就是图形占了多大地方！
 
-**All（大家）:** The big picture is finished—covered corner to corner! / 大画面完成了，每个角落都铺满！
+**One（一号）:** Every tile covers one tiny bit of space! / 每一块都盖住一小片地方！
+
+**Twenty（二十）:** No gaps, no overlaps — that's the rule! / 不能有空隙，也不能重叠——这是规则！
+
+*（最后一块拼好，整幅画完整亮起 / The last piece clicks in and the whole picture lights up）*
+
+**Three（三号）:** Ta-da! My show is complete! / 当当！我的表演完成了！
+
+**Seventeen（十七）:** Sixteen tiles, seventeen tiles — every tile counts! / 十六块、十七块——每一块都算数！
+
+**All（大家）:** 🎵 Fill it up from side to side! / 🎵 从这边铺到那边！
+
+**All（大家）:** 🎵 That's the area, far and wide! / 🎵 这就是面积，又大又宽！

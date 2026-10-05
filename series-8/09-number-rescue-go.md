@@ -8,18 +8,28 @@
 
 *（救援警报响起，数字被锁在方格里 / The rescue alarm rings; numbers are locked inside squares）*
 
-**Ten（十号）:** Seven is trapped! Break seven into parts we can carry. / 七被困住了！把七拆成我们能搬运的部分。
+**Ten（十号）:** Rescue alarm! Seven is trapped in the square! / 救援警报！七被困在方格里了！
 
-**Five（五号）:** Five and two make seven. / 五和二组成七。
+**Seven（七号）:** Help! I'm stuck! I can't get out! / 救命！我卡住了！出不来！
 
-**Four（四号）:** I'll take three and three—six is nearly there. / 我来带走三和三，六就快到了。
+**Ten（十号）:** Break seven into parts we can carry. Five and two make seven! / 把七拆成我们能搬运的部分。五加二等于七！
 
-**Six（六号）:** Three and three make six! / 三加三等于六！
+**Five（五号）:** I'll carry five! / 我来搬五！
+
+**Two（二号）:** And I'll carry two—we love pairs! / 我来搬二——我们最爱成双！
 
 **Seven（七号）:** Put my parts together: five, two... I'm free! / 把我的部分合起来：五、二……我自由了！
 
+**Six（六号）:** My turn! Three and three make six—split me up! / 轮到我！三加三等于六——把我拆开！
+
 *（Numberblobs 把碎片推成完整的数字 / The Numberblobs push the pieces back into whole numbers）*
 
-**Nine（九号）:** Six and three make nine. / 六和三组成九。
+**Numberblobs（数字小球）:** 🎵 Split apart, put together, rescue never ends! / 🎵 拆开来，合回去，救援不会停！
+
+**Nine（九号）:** Six and three make nine—I'm whole again! / 六加三等于九——我又完整了！
+
+**Eight（八号）:** Four and four make eight! / 四加四等于八！
+
+**Four（四号）:** Two fours, one eight—square and strong! / 两个四，一个八——方方正正真结实！
 
 **All（大家）:** Decompose, rescue, recombine: number rescue, go! / 拆开、救援、重组：数字救援，出发！

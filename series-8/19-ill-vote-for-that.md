@@ -6,20 +6,32 @@
 
 **剧本 Script:**
 
-*（投票箱摆在舞台中央 / A ballot box stands at centre stage）*
+*（投票箱摆在舞台中央，旁边立着三块牌子：野餐、派对、谜题 / A ballot box stands at centre stage, with three signs beside it: picnic, party, puzzle）*
 
-**Ten（十号）:** Choose your favourite: picnic, party or puzzle? / 选出你最喜欢的：野餐、派对还是谜题？
+**Ten（十号）:** Time to vote! Choose your favourite: picnic, party or puzzle? / 投票时间到！选出你最喜欢的：野餐、派对还是谜题？
 
-**Three（三号）:** I vote for the puzzle! / 我投谜题一票！
+**Three（三号）:** I vote for the puzzle! Puzzles are my favourite show! / 我投谜题一票！谜题是我最爱的表演！
 
-**Five（五号）:** Picnic has seven votes so far. / 野餐目前有七票。
+**One（一号）:** Picnic for me! Sandwiches in the sunshine! / 我选野餐！阳光下的三明治！
 
-**Eight（八号）:** Party has six. Puzzle has five. / 派对六票，谜题五票。
+**Five（五号）:** Let's count the votes! Picnic has seven so far! / 来数票！野餐目前有七票！
 
-**Numberblobs（数字小球）:** One more vote each—now watch the bars grow! / 每样再加一票——看条形长起来！
+**Eight（八号）:** Party has six votes. Puzzle has five. / 派对六票，谜题五票。
 
-*（条形图升到不同的高度 / The bars rise to different heights）*
+**Two（二号）:** Party has six — three pairs of votes! But seven beats six by one! / 派对六票——三对选票！可七比六多一票！
 
-**Seven（七号）:** The tallest bar has the most votes. / 最高的条形票数最多。
+**Four（四号）:** Seven is more than six, and six is more than five — picnic is winning! / 七比六多，六比五多——野餐领先！
 
-**All（大家）:** Count the votes, read the graph: we all agree! / 数票、看图：大家一致同意！
+**Numberblobs（数字小球）:** One more vote for each — now watch the bars grow! / 每样再加一票——看条形长起来！
+
+*（三条彩色条形升到不同的高度 / Three colourful bars rise to different heights）*
+
+**Seven（七号）:** The tallest bar has the most votes — picnic wins! / 最高的条形票数最多——野餐获胜！
+
+**Six（六号）:** Eight votes for picnic, seven for party, six for puzzle — all fair and square! / 野餐八票，派对七票，谜题六票——公平公正！
+
+**Three（三号）:** 🎵 Count the votes, read the bars! / 🎵 数选票，看条形！
+
+**Three（三号）:** 🎵 The tallest bar is ours! / 🎵 最高的条形属于我们！
+
+**All（大家）:** Picnic it is — we all agree! / 那就野餐吧——大家一致同意！

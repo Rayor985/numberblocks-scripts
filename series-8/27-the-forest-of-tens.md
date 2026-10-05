@@ -8,20 +8,28 @@
 
 *（森林里的树干上刻着一圈圈数字 / Numbers are carved around the tree trunks）*
 
-**Fifteen（十五）:** Fifteen take away ten leaves five. / 十五减十剩下五。
+**Five（五号）:** Welcome to the Forest of Tens! Watch your step! / 欢迎来到十的森林！小心脚下！
 
-**Sixteen（十六）:** Sixteen take away ten leaves six. / 十六减十剩下六。
+**Six（六号）:** The trees here love to subtract ten! / 这里的树最爱减去十！
 
-**Twenty-five（二十五）:** I'm not a multiple of ten, so I still have five left. / 我不是十的倍数，所以还剩下五。
+**Fifteen（十五）:** Fifteen take away ten leaves five! / 十五减十剩下五！
 
-**Twenty-six（二十六）:** Take ten away and six stays. / 拿走十，剩下六。
+**Sixteen（十六）:** Sixteen take away ten leaves six! / 十六减十剩下六！
 
-**Thirty-five（三十五）:** Thirty-five minus ten is twenty-five. / 三十五减十是二十五。
+**Five（五号）:** See? The ones stay the same—only the tens go away! / 看到了吗？个位不变——只有十位走了！
 
-**Forty-five（四十五）:** And forty-five minus ten is thirty-five. / 四十五减十是三十五。
+**Twenty-five（二十五）:** My turn! Twenty-five take away ten is fifteen! / 轮到我！二十五减十等于十五！
+
+**Twenty-six（二十六）:** Twenty-six take away ten is sixteen—six stays! / 二十六减十等于十六——六不变！
+
+**Thirty-five（三十五）:** Thirty-five minus ten is twenty-five! / 三十五减十是二十五！
+
+**Forty-five（四十五）:** And forty-five minus ten is thirty-five! / 四十五减十是三十五！
 
 *（树干上的十圈一个个熄灭 / Each ring of ten fades from the trunks）*
 
-**Ten（十号）:** Subtract a whole ten and only the last part changes. / 减去一个整十，只有个位部分变了。
+**Ten（十号）:** Subtract a whole ten and the ones never change! / 减去一个整十，个位永远不变！
 
-**All（大家）:** Through the forest of tens, one hop at a time! / 穿过十的森林，一次跳一格！
+**Six（六号）:** 🎵 Take ten away, hip hooray, / 🎵 拿走十，欢呼起，
+
+**All（大家）:** 🎵 The ones stay the same all day! / 🎵 个位整天都不变！

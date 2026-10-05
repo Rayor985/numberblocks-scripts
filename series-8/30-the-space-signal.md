@@ -10,18 +10,30 @@
 
 **Ten（十号）:** To reach far away, we need the right factors. / 要传得远，就要选对因数。
 
+**One（一号）:** One times anything is itself. I'll go first! / 一乘任何数都是它自己。我先来！
+
 **Seven（七号）:** Seven times nine is sixty-three. / 七乘九等于六十三。
 
 **Eight（八号）:** Eight times seven makes fifty-six. / 八乘七等于五十六。
 
 **Nine（九号）:** Six times nine is fifty-four. / 六乘九等于五十四。
 
+**Twenty-one（二十一）:** Three times seven is twenty-one. Check! / 三乘七等于二十一。对上了！
+
+*（天线亮起，信号束冲上夜空 / The dish lights up and the signal beam shoots skyward）*
+
 **One Hundred（一百）:** Ten times ten sends the strongest beam. / 十乘十发出最强的光束。
+
+**All（大家）:** 🎵 Send the signal high and far, / 🎵 把信号送上高高的天空，
+
+**All（大家）:** 🎵 Bouncing off each shining star! / 🎵 从每颗星星上弹回来！
 
 *（信号穿过星云，一圈圈扩散 / The signal crosses the nebula and ripples outward）*
 
 **Infinity（无穷大）:** Factors go on forever—and so do I! / 因数永远列不完——我也永远不结束！
 
 **Twenty-one（二十一）:** The Grey Sevens and Rainbow Eights heard us! / 灰七和彩虹八听到我们了！
+
+**Nine（九号）:** And the Rainbow-Nosed Nines are dancing to our beat! / 彩虹鼻九们正跟着我们的节拍跳舞！
 
 **All（大家）:** Signal sent, factors checked: the whole space replies! / 信号发出，因数核对——整片太空都在回应！

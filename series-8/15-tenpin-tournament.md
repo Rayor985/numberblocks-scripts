@@ -6,22 +6,36 @@
 
 **剧本 Script:**
 
-*（保龄球馆里，球道尽头站着两组球瓶 / At the end of the lanes stand two sets of pins）*
+*（保龄球馆里灯光闪烁，球道尽头摆着两组球瓶 / Lights flash in the bowling alley, with two sets of pins at the end of the lanes）*
 
-**Ten（十号）:** I knock down seven pins on the left and six on the right. / 我左边击倒七个球瓶，右边六个。
+**Ten（十号）:** Welcome to the tenpin tournament! Watch my big throw! / 欢迎来到保龄球大赛！看我的大力投掷！
 
-**Two（二号）:** Let's slide seven beads across on the rekenrek. / 在算珠架上把七颗珠子拨过去。
+**Three（三号）:** Two sets of pins, left and right — showtime! / 左右各一组球瓶——表演时间到！
 
-**Five（五号）:** Then slide six more—five and one. / 再拨六颗——五颗加一颗。
+*（保龄球呼啸着滚出去，球瓶哗啦啦倒下一片 / The bowling ball roars down the lane and pins crash everywhere）*
 
-**Seven（七号）:** Seven and five make twelve. / 七加五等于十二。
+**Ten（十号）:** Seven pins down on the left! / 左边倒了七个球瓶！
 
-**Ten（十号）:** Plus the last one: thirteen! / 再加最后一颗：十三！
+**Ten（十号）:** And six pins down on the right! / 右边倒了六个球瓶！
 
-**Three（三号）:** Let's tally the score with marks. / 我们用正字记号把分数记下来。
+**Two（二号）:** Let's add them up on the rekenrek! Slide seven beads across! / 我们在算珠架上加一加！把七颗珠子拨过去！
 
-*（记分板上出现一道道整齐的正字 / Tidy tally marks appear on the scoreboard）*
+**Five（五号）:** Now six more beads — slide five, then one! / 再拨六颗珠子——先拨五颗，再拨一颗！
 
-**Nine（九号）:** Five marks make one group, easy to count. / 五个记号一组，数起来很方便。
+**Seven（七号）:** Seven and five make twelve! / 七加五等于十二！
 
-**All（大家）:** Add the pins, tally the score: tournament time! / 算球瓶，记分数：比赛时间到！
+**Ten（十号）:** Plus the last bead: thirteen! Seven and six is thirteen! / 再加最后一颗：十三！七加六等于十三！
+
+**Three（三号）:** 🎵 Tally, tally, count the score! / 🎵 记一记，数一数分数！
+
+**Three（三号）:** 🎵 Five marks, then five marks more! / 🎵 五个记号，再来五个！
+
+*（记分板上出现一道道整齐的正字 / Tidy tally marks march across the scoreboard）*
+
+**Nine（九号）:** Five marks make one neat group — so easy to count! / 五个记号整齐一组——数起来真方便！
+
+**Four（四号）:** Two groups of five and three loose marks: thirteen! / 两组五个加三个散的：十三！
+
+**Six（六号）:** The scoreboard is full of tidy tallies — not one mistake! / 记分板上全是整齐的正字——一个都不会错！
+
+**All（大家）:** Add the pins, tally the score: tournament champion! / 算球瓶，记分数：锦标赛冠军诞生！

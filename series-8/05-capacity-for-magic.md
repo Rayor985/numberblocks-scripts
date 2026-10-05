@@ -8,18 +8,30 @@
 
 *（魔法屋里摆着高高低低的瓶子 / Tall and short jars line the magic room）*
 
-**Thirteen（十三）:** Pour the potion carefully—we need the fullest jar! / 小心倒药水——我们要最能装的瓶子！
+**Thirteen（十三）:** Welcome to my magic room! We need the perfect jar! / 欢迎来到我的魔法屋！我们要找一只完美的瓶子！
 
-**One（一号）:** My tiny bottle holds only one cup. / 我的小瓶子只能装一杯。
+**One（一号）:** My tiny bottle holds just one cup! / 我的小瓶子只能装一杯！
 
-**Four（四号）:** My square jar holds four cups. / 我的方瓶子能装四杯。
+**Two（二号）:** Two cups for me — a perfect pair! / 我能装两杯——正好一对！
+
+**Four（四号）:** My square jar holds four cups! / 我的方瓶子能装四杯！
 
 **Ten（十号）:** My tall jar holds ten cups! / 我的高瓶子能装十杯！
 
-**Nine（九号）:** Capacity is how much a container can hold. / 容量就是一个容器能装多少东西。
+**Nine（九号）:** But wait — capacity isn't about height! / 等等——容量跟高矮没关系！
 
-*（药水升到瓶口，闪出彩虹色的光 / The potion rises to the brim and glows rainbow-bright）*
+**Nine（九号）:** Capacity is how much a container can hold! / 容量就是容器能装多少东西！
 
-**Three（三号）:** The tallest jar doesn't always hold the most, so we check. / 最高的瓶子不一定装得最多，所以要试一试。
+**Three（三号）:** Let's test them! Pour, pour, pour! / 我们来试试！倒、倒、倒！
 
-**All（大家）:** Right jar, right capacity: magic! / 瓶子选对，容量刚好：魔法成功！
+*（药水倒进高瓶子，哗地溢了出来 / The potion pours into the tall jar and splashes over）*
+
+**Ten（十号）:** Oh no! My tall jar is too skinny — it overflowed! / 糟糕！我的高瓶子太瘦了——溢出来了！
+
+**Four（四号）:** My square jar holds it all! Four cups, just right! / 我的方瓶子全装下了！四杯，刚刚好！
+
+**Thirteen（十三）:** Thirteen cheers for the perfect jar! / 为完美的瓶子欢呼十三声！
+
+**All（大家）:** 🎵 Pour it in, not too much! / 🎵 倒进去，别太多！
+
+**All（大家）:** 🎵 Right capacity — that's magic! / 🎵 容量刚好——这就是魔法！

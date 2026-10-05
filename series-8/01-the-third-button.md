@@ -8,20 +8,40 @@
 
 *（数字乐园的广场上摆着一只巨大的魔法闹钟 / A giant magic clock stands in the Numberland square）*
 
-**Three（三号）:** Look! This clock has three buttons, and I need the third one! / 看！这只钟有三颗按钮，我要按第三颗！
+**Three（三号）:** Look! A giant clock with three buttons! / 看！一只巨大的钟，有三颗按钮！
 
-**Three（三号）:** Tick, tick, tick... the short hand stops just past twelve. / 滴答、滴答、滴答……短针停在十二刚过一点。
+**One（一号）:** One button, two buttons, three buttons — let me press them all! / 一颗、两颗、三颗按钮——让我都按一遍！
 
-**Ten（十号）:** What time is it now? / 现在几点了？
+**Three（三号）:** Wait! I need the THIRD one to set the time right! / 等等！我要按第三颗，才能把时间调准！
+
+**Ten（十号）:** But first — what time is it now? / 不过先说说——现在几点了？
 
 **One（一号）:** The long hand points to six. That means half past! / 长针指着六，那就是半点！
 
-**Two（二号）:** And when both hands point to twelve, the hours match. / 两根针都指着十二，时针和分针就对齐了。
+**Two（二号）:** And the short hand just passed twelve. Two hands, one pair! / 短针刚过十二。两根针，正好一对！
 
-**Six（六号）:** Twelve o'clock! Time for my midday snack. / 十二点整！该吃我的午餐点了。
+**Six（六号）:** Half past... my tummy says it's snack time! / 半点……我的肚子说该吃点心了！
 
-*（闹钟当当地敲响，指针稳稳走动 / The clock chimes and its hands move smoothly）*
+**Three（三号）:** Okay, button one — here I go! / 好吧，第一颗按钮——我按啦！
 
-**Three（三号）:** The third button sets the time. Third time lucky! / 第三颗按钮定好时间，第三次就成功啦！
+*（指针开始倒着转，越转越快 / The hands start spinning backwards, faster and faster）*
 
-**All（大家）:** Half past six, twelve o'clock, and everything in between! / 六点半、十二点整，还有中间的每个时刻！
+**Ten（十号）:** Oh no! The hands are running backwards! / 糟糕！指针在倒着走！
+
+**Three（三号）:** Then button two! / 那就按第二颗！
+
+*（闹钟敲响午夜十二点，星星冒了出来 / The clock strikes midnight and stars pop out）*
+
+**Two（二号）:** Now it's midnight! Too early for snacks, Six! / 现在是半夜！六号，吃点心还太早啦！
+
+**Six（六号）:** My tummy can wait... I think! / 我的肚子可以等……大概吧！
+
+**Three（三号）:** Third button... third time lucky! / 第三颗按钮……第三次一定成功！
+
+*（闹钟欢快地敲响，指针稳稳走动 / The clock chimes happily and the hands move smoothly）*
+
+**Six（六号）:** Twelve o'clock! Snack time for real this time! / 十二点整！这次真的是点心时间！
+
+**All（大家）:** 🎵 Tick tock, tick tock, the third one's right! / 🎵 滴答滴答，第三颗最准啦！
+
+**All（大家）:** 🎵 One, two, three — the time's just right! / 🎵 一、二、三——时间刚刚好！

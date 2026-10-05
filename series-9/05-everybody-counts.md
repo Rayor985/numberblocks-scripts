@@ -10,9 +10,15 @@
 
 **One（一号）:** 🎵 One, two, three—come count with me! / 🎵 一、二、三——跟我一起数！
 
+**Five（五号）:** 🎵 High-five counting, you and me! / 🎵 击掌数数，你和我！
+
 **Ten（十号）:** 🎵 Four, five, six, seven, eight, nine, ten! / 🎵 四、五、六、七、八、九、十！
 
+**Fifteen（十五）:** 🎵 Ten and five make fifteen, friends! / 🎵 十加五等于十五，朋友们！
+
 **Twenty（二十）:** 🎵 Eleven to twenty, again and again! / 🎵 十一到二十，一遍又一遍！
+
+**Twenty-five（二十五）:** 🎵 Five by five, we're twenty-five alive! / 🎵 五乘五，我们是二十五！
 
 **Thirty（三十）:** 🎵 Twenty-one to thirty, steady and clear! / 🎵 二十一到三十，稳稳又清楚！
 
@@ -25,5 +31,7 @@
 *（全场一起拍手，节拍越来越快 / The whole crowd claps as the beat grows faster）*
 
 **Numberblobs（数字小球）:** 🎵 Everybody counts, from the first to the last! / 🎵 人人都来数，从第一个到最后一个！
+
+**Numberblobs（数字小球）:** 🎵 Count with me, both slow and fast! / 🎵 跟我一起数，有快也有慢！
 
 **All（大家）:** One to fifty, loud and proud: everybody counts! / 从一到五十，响亮又自豪：人人都来数！

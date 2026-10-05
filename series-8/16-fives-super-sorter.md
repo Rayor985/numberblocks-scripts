@@ -6,22 +6,32 @@
 
 **剧本 Script:**
 
-*（分类机前堆着水果、玩具和形状 / Fruit, toys and shapes pile up in front of the sorter）*
+*（分类机前堆着水果、玩具和各种形状，乱成一团 / Fruit, toys and shapes pile up in a jumble in front of the sorter）*
 
-**Five（五号）:** Sort everything by what it is! / 把所有东西按类别分好！
+**Five（五号）:** Welcome to my super sorter! Same category in, tidy pile out! / 欢迎来到我的超级分类机！同类放进去，整齐的堆出来！
 
-**Sorty（分类机）:** First group: things you can eat. / 第一组：可以吃的东西。
+**One（一号）:** Whoa! Everything's mixed up! Where do we start? / 哇！所有东西都混在一起了！从哪儿开始？
 
-**One（一号）:** Apples, pears and oranges go here. / 苹果、梨和橙子放这里。
+**Sorty（分类机）:** First group: things you can eat. Beep! / 第一组：可以吃的东西。哔！
 
-**Sorty（分类机）:** Second group: things with straight edges. / 第二组：有直边的东西。
+**One（一号）:** Apples, pears and oranges — in you go! / 苹果、梨和橙子——进去吧！
 
-**Four（四号）:** Squares and rectangles—both have four sides. / 正方形和长方形——都有四条边。
+**Two（二号）:** Two apples for me, two pears for you — pairs stay together! / 两个苹果归我，两个梨归你——成双成对不分开！
 
-**Three（三号）:** And triangles go in the three-sided pile! / 三角形放进三条边那一堆！
+**Sorty（分类机）:** Second group: things with straight edges. Beep! / 第二组：有直边的东西。哔！
 
-*（机器嗡嗡作响，三只箱子整齐排好 / The machine hums and three boxes line up）*
+**Four（四号）:** Squares and rectangles — both have four straight sides! / 正方形和长方形——都有四条直边！
 
-**Five（五号）:** Same category in, tidy pile out! / 同类放进去，整齐的堆就出来！
+**Three（三号）:** And triangles hop into the three-sided pile! One, two, three sides! / 三角形跳进三条边那一堆！一、二、三条边！
 
-**All（大家）:** Super sorted, super tidy! / 超级分类，超级整齐！
+**Sorty（分类机）:** Hmm... a round ball. No straight edges. Beep-boop? / 嗯……一个圆球，没有直边。哔——波？
+
+**Five（五号）:** Balls roll into the round-things box! Everything finds its group! / 圆球滚进圆形东西的箱子！每样东西都有自己的组！
+
+*（机器嗡嗡作响，四只箱子整整齐齐排成一排 / The machine hums as four neat boxes line up in a row）*
+
+**Three（三号）:** 🎵 Sort it out, put it right! / 🎵 分一分，放对地方！
+
+**Three（三号）:** 🎵 Every box is tidy and bright! / 🎵 每个箱子整齐又漂亮！
+
+**All（大家）:** Super sorted, super tidy — hooray! / 超级分类，超级整齐——万岁！

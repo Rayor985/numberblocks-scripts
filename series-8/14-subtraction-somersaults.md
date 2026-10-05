@@ -10,18 +10,26 @@
 
 **Fourteen（十四）:** Watch this subtraction somersault: fourteen take away five! / 看我的减法翻筋斗：十四减五！
 
-**Fourteen（十四）:** First I dive down to ten—four comes off. / 先俯冲到十——拿掉四。
+**Fourteen（十四）:** First I dive down to ten—four comes off! / 先俯冲到十——拿掉四！
 
-**Fourteen（十四）:** Five is four and one, so one more comes off ten. / 五是四加一，所以从十再拿掉一。
+**Fourteen（十四）:** Five is four and one, so one more comes off ten! / 五是四加一，所以从十再拿掉一！
 
-**Ten（十号）:** Ten leave one: the answer is nine! / 十剩下一：答案是九！
+**Nine（九号）:** Nine! Ten take away one leaves nine—what a landing! / 九！十减一剩九——落地真漂亮！
 
-**Nine（九号）:** Thirteen take away six works the same way. / 十三减六也是一样的办法。
+**Nine（九号）:** Thirteen take away six works the same way! / 十三减六也是一样的办法！
 
-**Nine（九号）:** Down to ten leaves three, then take three—zero left! / 先到十剩三，再拿掉三——一个不剩！
+**Nine（九号）:** Down to ten leaves three, then take three more—that's seven! / 先到十剩三，再拿掉三——等于七！
 
-**Thirteen（十三）:** Wait, thirteen minus six is seven! / 等等，十三减六是七！
+**Thirteen（十三）:** Thirteen minus six is seven—you stuck the landing! / 十三减六是七——你稳稳落地了！
 
-*（十号笑着把三还了回去 / Ten laughs and hands the three back）*
+*（大家鼓掌，体操垫都震动了 / Everyone claps and the gym mat bounces）*
+
+**Twelve（十二）:** Twelve take away four: down to ten, take two more—eight! / 十二减四：先到十，再拿二——等于八！
+
+**Ten（十号）:** Eight! Clean landing! / 八！漂亮落地！
+
+**Eleven（十一）:** Eleven take away seven: down to ten, take six more—four! / 十一减七：先到十，再拿六——等于四！
+
+**All（大家）:** 🎵 Tumble down to ten, take the rest away, somersault landing—hip hooray! / 🎵 翻到十，拿掉余，筋斗落地——万岁！
 
 **All（大家）:** Bridge through ten and subtraction lands on its feet! / 越过十，减法稳稳落地！
