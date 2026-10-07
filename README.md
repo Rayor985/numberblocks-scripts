@@ -31,6 +31,24 @@ Bonus: `series-2/09-double-trouble.md` is an extended full-length script of S2E9
 official Numberblocks scripts; the dialogue here was written in the show's style based on each
 episode's official storyline, for learning purposes only.
 
+---
+
+## 🌿 自然探索专区 · Look What I Found 绘本集
+
+收录英国国民信托（National Trust）与 Nosy Crow 联合出版的经典自然探索科普绘本全套 5 册（中英双语对照 + 官方原版伴读原声直达）：
+
+| 册次 | 绘本名 Title | 中文主题 | 目录与剧本 Folder |
+|---|---|---|---|
+| 01 | *Look What I Found in the Woods* | 《在森林里看我找到了什么》 | [look-what-i-found/01-in-the-woods.md](look-what-i-found/01-in-the-woods.md) |
+| 02 | *Look What I Found at the Seaside* | 《在海边看我找到了什么》 | [look-what-i-found/02-at-the-seaside.md](look-what-i-found/02-at-the-seaside.md) |
+| 03 | *Look What I Found on the Farm* | 《在农场看我找到了什么》 | [look-what-i-found/03-on-the-farm.md](look-what-i-found/03-on-the-farm.md) |
+| 04 | *Look What I Found by the River* | 《在河边看我找到了什么》 | [look-what-i-found/04-by-the-river.md](look-what-i-found/04-by-the-river.md) |
+| 05 | *Look What I Found at the Park* | 《在公园看我找到了什么》 | [look-what-i-found/05-at-the-park.md](look-what-i-found/05-at-the-park.md) |
+
+专区入口网页：`look-what-i-found.html`，每册顶部均内嵌原出版社官方伴读音频播放器。
+
+---
+
 Numberblocks © BBC / Alphablocks Ltd. 本仓库与 BBC 无关。
 Numberblocks © BBC / Alphablocks Ltd. This is an unofficial fan/learning project, not affiliated with the BBC.
 

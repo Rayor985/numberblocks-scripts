@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look What I Found on the Farm ｜ 在农场看我找到了什么 · 自然探索双语绘本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#f57c00;--gradient:linear-gradient(135deg,#f57c00,#e65100)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fcf9f2;color:#33291d;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #ede3d2;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto}
+.topbar a.back{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.topbar .series-tag{font-size:13px;color:#8c7a65;background:#f2ebdc;padding:3px 12px;border-radius:999px}
+
+/* Hero */
+.hero{background:var(--gradient);color:#fff;padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:4px 16px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,4.5vw,38px);font-weight:800;line-height:1.3;margin-bottom:8px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hero .cn-title{font-size:clamp(18px,3vw,24px);opacity:.95;font-weight:600;margin-bottom:12px}
+.hero .credits{font-size:13px;opacity:.85;margin-top:6px}
+
+/* Container */
+.container{max-width:860px;margin:0 auto;padding:24px 18px 60px}
+
+/* Audio Card (TOP PRIORITY) */
+.audio-card{background:#fff;border-radius:20px;padding:24px 22px;margin:-28px auto 26px;position:relative;z-index:10;box-shadow:0 10px 30px rgba(70,50,20,.12);border:2px solid #f0e6d6}
+.audio-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.audio-title{font-size:16px;font-weight:700;color:#2c2214;display:flex;align-items:center;gap:8px}
+.audio-badge{background:#e8f5e9;color:#2e7d32;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+audio{width:100%;height:46px;margin:10px 0 14px;border-radius:999px;outline:none}
+.audio-links{display:flex;gap:12px;flex-wrap:wrap;padding-top:8px;border-top:1px dashed #ede2d0}
+.audio-link-btn{font-size:12.5px;font-weight:600;color:var(--accent);background:#fbf5ea;border:1px solid #ebdcc5;padding:6px 14px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.audio-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Cards */
+.card{background:#fff;border-radius:18px;padding:22px 24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(70,50,20,.05);border:1px solid #f0e6d6}
+.card-head{font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.synopsis-cn{font-size:15px;line-height:1.8;color:#453726;margin-bottom:10px}
+.synopsis-en{font-size:13.5px;line-height:1.7;color:#82725d;font-style:italic}
+
+/* Treasures */
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:10px}
+.tr-item{background:#faf6ec;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:1px solid #ece0cc}
+.tr-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;flex:none;margin-top:2px}
+.tr-title{font-size:14px;font-weight:700;color:#2e2213}
+.tr-title span{font-size:12.5px;color:#7a6850;font-weight:normal}
+.tr-desc{font-size:12px;color:#6b5a44;margin-top:4px;line-height:1.5}
+
+/* Script Section */
+.sec-divider{text-align:center;margin:32px 0 16px;position:relative}
+.sec-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#e5dac8;z-index:1}
+.sec-divider span{position:relative;z-index:2;background:#fcf9f2;padding:4px 18px;font-size:13px;font-weight:700;color:#8c785f;border-radius:999px;border:1px solid #e5dac8}
+
+.dialogue-card{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(60,40,15,.04);border:1px solid #f0e6d6;transition:transform .15s,box-shadow .15s}
+.dialogue-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(60,40,15,.09)}
+.dialogue-card.is-highlight{border-left:4px solid var(--accent);background:#fefdfa}
+.en-text{font-size:16px;font-weight:600;color:#22180d;line-height:1.6;margin-bottom:6px}
+.cn-text{font-size:14.5px;color:#5a4732;line-height:1.6}
+
+/* Prev/Next */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid #ede1ce}
+.nav-btn{padding:12px 18px;border-radius:12px;background:#fff;border:1.5px solid #e2d4c0;font-size:14px;font-weight:600;color:#503e28;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.nav-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-btn.disabled{opacity:.4;pointer-events:none;background:#f3ecdf;border-color:#e0d4c1}
+
+footer{text-align:center;color:#a89780;font-size:12.5px;padding:36px 20px 48px;line-height:1.8}
+footer a{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="back" href="../look-what-i-found.html">‹ 返回绘本目录</a>
+  <span class="series-tag">National Trust 英国自然探索 · 第 03 册</span>
+</header>
+
+<div class="hero">
+  <span class="badge">🌾 田野与乡村农庄宝藏</span>
+  <h1>Look What I Found on the Farm</h1>
+  <div class="cn-title">在农场看我找到了什么</div>
+  <div class="credits">文：Moira Butterfield ｜ 图：Jesús Verona ｜ 朗诵：Kristin Atherton</div>
+</div>
+
+<main class="container">
+  <!-- 官方原版伴读音频置顶卡片 -->
+  <section class="audio-card">
+    <div class="audio-header">
+      <div class="audio-title">
+        <span>🎧 官方原版伴读配乐音频</span>
+        <span class="audio-badge">Stories Aloud 翻页伴读版</span>
+      </div>
+    </div>
+    <audio controls preload="none" src="https://nosycrowaudio.com/wp-content/uploads/2023/02/Look-What-I-Found-on-the-Farm-01022023-17.38.mp3">您的浏览器不支持 HTML5 audio 播放器，请点击下方链接收听。</audio>
+    <div class="audio-links">
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/look-what-i-found-on-the-farm/" target="_blank" rel="noopener">🌐 Nosy Crow 官方伴读页 ↗</a>
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/wp-content/uploads/2023/02/Look-What-I-Found-on-the-Farm-01022023-17.38.mp3" target="_blank" rel="noopener">⬇️ 音频原文件直链 (MP3) ↗</a>
+    </div>
+  </section>
+
+  <!-- 绘本简介 -->
+  <section class="card">
+    <div class="card-head">📖 绘本故事简介</div>
+    <div class="synopsis-cn">跟随充满好奇心的小朋友走进生机勃勃的大农场，开启一场大自然寻宝之旅！从挂在栅栏上的柔软羊毛簇、吹响草笛的草茎，到如天蓝色般的碎蛋壳和娇嫩的苹果花瓣，本书带领孩子们观察农场动物、野外生灵的家园与四季作物的生长，配有生动有趣的寻宝互动与爱护自然的环保提示。</div>
+    <div class="synopsis-en">Join a curious child on an outdoor adventure across a bustling farm! From discovering soft tufts of sheep's wool along the fences to making grass whistles and blowing dandelion seed clocks, young readers explore farm animals, wildlife habitats, seasonal crops, and the wonders of nature, complete with interactive spotting games and gentle conservation tips.</div>
+  </section>
+
+  <!-- 大自然宝藏清单 -->
+  <section class="card">
+    <div class="card-head">🌿 本册大自然寻宝物清单 (Natural Treasures)</div>
+    <div class="tr-grid">
+      
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A tuft of sheep's wool <span>一簇羊毛</span></div>
+            <div class="tr-desc">像羊毛毛衣一样柔软，是绵羊擦过栅栏时留下的细小毛簇。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A fluffy chick feather <span>一片毛茸茸的雏鸡羽毛</span></div>
+            <div class="tr-desc">像太阳一样金黄灿烂，是破壳不久的小鸡身上落下的细软羽毛。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A fat grass stalk <span>一根粗草茎</span></div>
+            <div class="tr-desc">夹在大拇指之间用力一吹，就能吹出吱吱响亮哨音的粗草茎。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Fluffy balls of dandelion seeds <span>毛茸茸的蒲公英种子球</span></div>
+            <div class="tr-desc">也被叫做“蒲公英钟”，轻轻一吹许个愿望，种子便随风漫天飘散。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A broken eggshell <span>一片碎蛋壳</span></div>
+            <div class="tr-desc">天蓝色且布满斑点，是野生小鸟破壳孵化后掉落在地上的美丽蛋壳。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">An apple blossom petal <span>一片苹果花瓣</span></div>
+            <div class="tr-desc">摸起来像天鹅绒般细腻柔软，春天里如五彩纸屑般从果树上翩翩飘落。</div>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- 中英双语对照全文 -->
+  <section>
+    <div class="card-head" style="margin:24px 4px 14px">📜 中英逐句对照完整剧本</div>
+    <div class="sec-divider"><span>📍 Introduction · 开篇</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">When you hear this noise, turn the page.</div>
+              <div class="cn-text">当你听到这个声音时，请翻页。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look What I Found on the Farm, by Moira Butterfield and Jesús Verona. Read by Kristin Atherton. Published by Nosy Crow.</div>
+              <div class="cn-text">《在农场看我找到了什么》，作者：莫伊拉·巴特菲尔德，插画：赫苏斯·维罗纳。朗读：克里斯汀·阿瑟顿。由 Nosy Crow 出版。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Sheep in the Meadow · 草地上的绵羊</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Today we're on the farm. Let's go! Past the gate where daisies grow.</div>
+              <div class="cn-text">今天我们去农场。出发啦！穿过雏菊盛开的木栅门。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A tuft of sheep's wool, soft as a woolly jumper.</div>
+              <div class="cn-text">快看我找到了什么！一簇小羊毛，像羊毛衫一样软绵绵。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One signpost to show the way, Two blue butterflies, Three curly white sheep?</div>
+              <div class="cn-text">你还能找到这些吗：一个指路的路标，两只蓝色的蝴蝶，三只卷卷白毛的绵羊？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A farm is a place for growing crops or raising animals.</div>
+              <div class="cn-text">农场是种植庄稼或饲养动物的地方。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Farmers usually live in a farmhouse with nearby fields where their animals graze and crops can grow.</div>
+              <div class="cn-text">农场主通常住在农舍里，农舍周围有田地，动物可以在那里吃草，庄稼也能茁壮成长。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sheep have a thick, woolly coat called a fleece.</div>
+              <div class="cn-text">绵羊长着厚厚的羊毛外衣，叫做羊毛茸（fleece）。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes, if a sheep brushes past a fence, it can leave tiny tufts of its fleece behind.</div>
+              <div class="cn-text">有时候，绵羊擦过篱笆，就会在上面留下一小簇一小簇的羊毛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Once a year, a sheep's thick fleece is shaved off and it might be made into wool for knitting.</div>
+              <div class="cn-text">每年会有一次，农夫给绵羊剪下厚厚的羊毛，它们会被纺成用来织毛衣的毛线。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A farm can be home to all kinds of animals.</div>
+              <div class="cn-text">农场是各种各样动物温暖的家。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Look out for sheep with black or white faces, long, curly horns, or extra long, shaggy coats.</div>
+              <div class="cn-text">找一找长着黑脸或白脸的绵羊、长而弯曲的羊角，或是格外蓬松的长毛大衣吧。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Cows can be black, brown, cream or white, or sometimes splodged with black like spilled ink.</div>
+              <div class="cn-text">奶牛有黑色的、棕色的、米色的或白色的，有时身上还带着像打翻了墨水般的黑斑块。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The breeds all have different names, like Holstein, Jersey or Highland.</div>
+              <div class="cn-text">不同品种有不同的名字，比如荷斯坦牛、娟姗牛或苏格兰高地牛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Animal footprints to spot: Cow: two fat curved shapes like giant beans. Sheep: two long bunny ear shapes. Horse: a curved shape, the shape of the metal shoe on the horse's feet. Chicken: three pointy lines.</div>
+              <div class="cn-text">寻找动物脚印：奶牛：两个胖乎乎的弯曲印记，像大豆瓣。绵羊：两个长长的印记，像兔耳朵。马：弯弯的印记，那是马蹄铁的形状。小鸡：三条尖尖的细线。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Chicks in the Pen · 鸡舍里的小鸡</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Who's that in the pen? Cheeping chicks with mother hen.</div>
+              <div class="cn-text">圈栏里那是谁呀？是叽叽喳喳的小鸡和母鸡妈妈。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A fluffy chick feather, as yellow as the sun.</div>
+              <div class="cn-text">快看我找到了什么！一片毛茸茸的雏鸡羽毛，像太阳一样金黄。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One empty eggshell, Two chickens fast asleep, Three eggs that haven't hatched yet?</div>
+              <div class="cn-text">你还能找到这些吗：一个空蛋壳，两只熟睡的母鸡，三颗还没孵化的鸡蛋？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Most baby animals are born in springtime, when the weather is warmer and there's plenty of food for them to eat.</div>
+              <div class="cn-text">大多数动物宝宝都出生在春天，这时天气回暖，食物丰富。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When a chick is ready to hatch, it will use its special egg tooth, a sharp point on the end of its beak, to peck its way out of the egg.</div>
+              <div class="cn-text">当小鸡准备破壳时，它会用嘴尖上独特的“卵齿”（小尖突）啄破蛋壳钻出来。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">It takes a whole day and night. No wonder chicks need a rest once they hatch!</div>
+              <div class="cn-text">这得花上一整天一整夜呢。难怪小鸡一孵出来就需要好好睡上一觉！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When chicks first hatch, they look damp and straggly, but they soon dry out and become fluffy.</div>
+              <div class="cn-text">刚孵出的小鸡羽毛湿漉漉、乱蓬蓬的，但很快就会晾干，变得毛茸茸、圆滚滚。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Ducks hatch in springtime too. The baby ducklings will follow their mum in a line to the pond to swim and find food together.</div>
+              <div class="cn-text">鸭宝宝也是在春天破壳的。小鸭子们会排成整齐的一队跟在妈妈身后走向池塘，一起游泳、找好吃的。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When lambs are first born, they are very wobbly on their legs. It takes a little while for them to stand up as their mother licks them clean.</div>
+              <div class="cn-text">小羊刚出生时，双腿晃晃悠悠站不稳。羊妈妈会温柔地把它们舔干净，过一会儿它们就能站起来啦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Animal babies to spot: Chick: they might be yellow, brown, white or black. Lamb: look out for the littlest ones hidden in the grass. Calf: you might see one feeding on its mum's milk. Duckling: they have little pointy wings and big feet. Foal: you might see one sticking close to its mum.</div>
+              <div class="cn-text">寻找动物宝宝：小鸡：可能是黄色、棕色、白色或黑色。小羊：找找藏在草丛里最小的小羊。小牛：你可能会看到正在吃妈妈母乳的小牛。小鸭：它们长着尖尖的小翅膀和大脚掌。小马驹：你可能会看到紧紧依偎在妈妈身边的小马。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Green Meadow Grass · 丰美的青草</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Grass is growing, green and sweet, just right for a horse to eat.</div>
+              <div class="cn-text">青草长得又绿又甜，正好给小马当美餐。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A fat grass stalk I can put between my thumbs and blow. Squeak!</div>
+              <div class="cn-text">快看我找到了什么！一根粗粗的草茎，夹在大拇指中间用力吹——吱——！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One tractor, Two swooping birds, Three yellow flowers?</div>
+              <div class="cn-text">你还能找到这些吗：一辆拖拉机，两只俯冲飞翔的小鸟，三朵黄色的小花？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">In springtime, the grass starts sprouting in the meadows. It is perfect food for the horses, cows and sheep.</div>
+              <div class="cn-text">到了春天，草地上的青草开始抽芽生长。对马、牛和羊来说，这是最美味的食物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">In late spring, the grass needs to be cut. The cuttings will be dried out in the sun and made into bales of hay for the animals to eat when winter comes again.</div>
+              <div class="cn-text">暮春时节需要收割牧草。割下的草晒干后会捆成干草垛，等冬天再次来临时给动物们吃。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The hay is stored in a hay barn to keep it dry. If the hay gets damp, it will grow mouldy and the animals won't be able to eat it.</div>
+              <div class="cn-text">干草存放在草料棚里保持干燥。如果干草受潮，就会发霉变质，动物们就不能吃啦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Farm animals are usually kept in barns through the winter, but as soon as it's warm enough, they are let out into the grass meadows. They often get very excited when they first go outside, galloping around the field.</div>
+              <div class="cn-text">农场动物通常在棚舍里度过冬天，但只要天气暖和起来，它们就会被放到青草甸上。刚出门时它们总是格外兴奋，欢快地在田野上撒欢飞奔。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Types of wild grass to spot: Grasses with soft flower tufts. Feathery, fluffy grasses that wave in the breeze. Droopy grasses that bend over like mini arches. Long, spiky-looking grasses that stand up straight.</div>
+              <div class="cn-text">寻找野草种类：顶着柔软花穗的草。羽毛般蓬松、随风摇曳的草。像迷你拱门一样弯垂下头的草。笔直挺立、长着尖刺模样的草。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Along the Hedgerow · 沿着绿树篱</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Along the hedge there's lots to see, and a game for you and me.</div>
+              <div class="cn-text">沿着树篱看点真多，你和我来玩个小游戏。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! Fluffy balls of dandelion seeds. Blow one and make a wish!</div>
+              <div class="cn-text">快看我找到了什么！毛茸茸的蒲公英种子球。吹一下，许个愿吧！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One mouse hiding away, Two soft spiders' webs, Three ladybirds on leaves?</div>
+              <div class="cn-text">你还能找到这些吗：一只藏起来的小老鼠，两张柔软的蜘蛛网，三只叶片上的小瓢虫？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Hedgerows are leafy homes for plants and animals. They give shelter from the wind and rain.</div>
+              <div class="cn-text">树篱是动植物枝繁叶茂的家园，能帮它们挡风遮雨。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Small birds and little animals make nests in a hedgerow's leafy shadows, away from bigger animals that might want to eat them.</div>
+              <div class="cn-text">小鸟和小动物在树篱的绿荫下筑巢，躲避可能吃掉它们的大型动物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">It's a safe home for minibeasts too.</div>
+              <div class="cn-text">这里也是微小昆虫们安全的庇护所。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A ball of dandelion seeds is sometimes called a clock because you can play a pretend game about telling the time.</div>
+              <div class="cn-text">蒲公英种子球有时被称为“蒲公英钟”，因为你可以玩一个假装报时的小游戏。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Count each time you blow the seeds until they are all gone. The first blow is one o'clock. What time will the last blow be?</div>
+              <div class="cn-text">每吹一次就数一下，直到种子全部吹飞。第一下是一点钟。最后一下吹散时会是几点钟呢？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The floaty dandelion seeds will blow away in the wind, and new dandelions will grow where the seeds land.</div>
+              <div class="cn-text">轻飘飘的蒲公英种子随风远去，落在哪里，哪里就会长出新的蒲公英。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Wildflowers often grow under the shelter of a hedge. It's okay to pick dandelion clocks and daisies because there are so many around, but it's best to leave other flowers alone.</div>
+              <div class="cn-text">野花常常在树篱的庇护下生长。采摘蒲公英绒球和雏菊是可以的，因为周围长着很多很多；但其他野花最好还是留在原地欣赏哦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Types of minibeast to spot: Bumblebee: collecting nectar from the flowers. Butterfly: sucking up the sweet flower nectar. Spider: spinning its webs between the branches. Beetle: munching on plants or hunting other minibeasts. Aphid: feeding on sweet leaf juice called sap.</div>
+              <div class="cn-text">寻找微小生物：大黄蜂：在花丛中采集花蜜。蝴蝶：吸食甜甜的花蜜。蜘蛛：在枝丫间织网。甲虫：大嚼植物叶片或捕食其他小虫。蚜虫：吸食叶片里甜甜的汁液（树汁）。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Trees and Birds · 树梢与飞鸟</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Birds are perching in the trees. Their songs are floating on the breeze.</div>
+              <div class="cn-text">小鸟停歇在树梢上，歌声随微风四处飘扬。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A broken eggshell, blue as the sky and dotted with freckles.</div>
+              <div class="cn-text">快看我找到了什么！一枚破损的蛋壳，像天空一样蔚蓝，还落满了小雀斑。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One bird's nest, Two little rabbits, Three blackbirds?</div>
+              <div class="cn-text">你还能找到这些吗：一个鸟窝，两只小兔子，三只乌鸫（黑鸟）？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Wild birds build their nests in hedges and trees, and even in the barns on the farm.</div>
+              <div class="cn-text">野鸟在树篱和树上筑巢，有时甚至把窝安在农场的谷仓里。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When baby birds hatch, their broken eggs sometimes fall to the ground.</div>
+              <div class="cn-text">当鸟宝宝破壳而出时，破碎的蛋壳有时会掉落到地面上。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some animals build their homes on the ground, or even underground.</div>
+              <div class="cn-text">有些动物在地面上做窝，有的甚至住在地底下。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Wild rabbits live in a burrow of underground tunnels called a warren. They pop up to nibble the meadow grass.</div>
+              <div class="cn-text">野兔住在由地下隧道组成的洞穴群（兔子窝，warren）里。它们会探出小脑袋啃食草地上的青草。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Bigger wild animals like foxes or badgers might live in quiet corners of a field.</div>
+              <div class="cn-text">像狐狸或獾这样较大的野生动物，可能住在田野僻静的角落。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A fox's underground home is called a den, and a badger's home is called a sett.</div>
+              <div class="cn-text">狐狸在地下的家叫巢穴（den），獾的家叫獾洞（sett）。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Animal homes to spot: Big entrance hole: foxes or badgers might live here. Medium-size entrance hole: rabbits might live here. Their droppings could be scattered around the entrances. Small entrance hole: rats or mice might live here. Nest: the bigger the bird, the bigger the nest they build.</div>
+              <div class="cn-text">寻找动物的家：大洞口：狐狸或獾可能住在这里。中等洞口：兔子可能住在这里，洞口周围可能散落着它们的便便。小洞口：田鼠或小老鼠可能住在这里。鸟窝：鸟儿越大，筑的巢也越大。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Blossom and Crops · 花瓣与作物</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Blossom petals drifting down, like confetti on the ground.</div>
+              <div class="cn-text">花瓣翩跹飘落地上，宛如散落一地的五彩纸屑。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! An apple blossom petal, velvety between my fingers.</div>
+              <div class="cn-text">快看我找到了什么！一片苹果花瓣，摸在指尖像天鹅绒般细腻。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One watering can, Two bird feeders, Three woodpigeons?</div>
+              <div class="cn-text">你还能找到这些吗：一把喷壶，两个喂鸟器，三只斑尾林鸽？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Life on the farm changes all year round as different crops and fruits grow.</div>
+              <div class="cn-text">随着各种作物与水果的生长，农场的生活一年四季都在变化。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some farms have a shop where you can buy fresh food that the farmer has grown.</div>
+              <div class="cn-text">有些农场开有小店，你可以在那里买到农夫亲手种出的新鲜食物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The fruit trees blossom in spring and grow fruit in the summer.</div>
+              <div class="cn-text">果树在春天开花，在夏天结果。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Delicious apples, pears and cherries will one day be ready to eat in the sunshine.</div>
+              <div class="cn-text">美味的苹果、梨和樱桃，终有一天能在阳光下成熟供人品尝。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The bees that live on the farm make sweet, gooey honey through the spring and summer. In winter, they rest in their hives.</div>
+              <div class="cn-text">生活在农场的蜜蜂在春夏两季酿造香甜黏稠的蜂蜜。到了冬天，它们便在蜂巢里休息。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">In summer, crops like wheat and barley grow taller and taller in the fields, ready to harvest before winter comes.</div>
+              <div class="cn-text">夏天里，田里的小麦和大麦越长越高，准备赶在冬天到来前收获。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Wheat will be turned into flour, perfect for bread and cakes.</div>
+              <div class="cn-text">小麦会被磨成面粉，最适合用来烤面包和做蛋糕。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Milk from cows, goats or sheep on the farm can be turned into other foods like butter, cheese, yoghurt or ice cream.</div>
+              <div class="cn-text">农场里奶牛、山羊或绵羊产出的奶，可以制成黄油、奶酪、酸奶或冰淇淋等各种美食。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Crops and fruit to spot: Wheat: the wheat grows in spiky tufts called ears. Oats: grains of oats are made into porridge and yummy flapjacks. Barley: grains of barley are used to make all sorts of things, including breakfast cereal. Fruit: look out for unusual fruit, such as mini crab apples and round, browny-orange medlars.</div>
+              <div class="cn-text">寻找作物与水果：小麦：麦粒长在带芒刺的花穗上，叫做麦穗。燕麦：燕麦粒被做成燕麦粥和美味的燕麦饼。大麦：大麦粒被用来制作各种食品，包括早餐麦片。水果：找找不同寻常的水果，例如小巧的山荆子（野苹果）和圆圆的棕橙色欧楂果。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Farm Treasures & Explorer Code · 农场寻宝图与探索守则</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">We've seen the farm and walked around. Look at all the things we've found!</div>
+              <div class="cn-text">我们逛过了农场，漫步各处。快看看我们找到的所有宝物！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Treasure!</div>
+              <div class="cn-text">宝物清单！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">As you collect, be thoughtful too. Bring no harm with what you do.</div>
+              <div class="cn-text">采集宝物时，多一份体贴细心。行动要轻柔，莫伤害自然生灵。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When you're exploring the farm, be careful around farm animals and wild animals so you don't scare them.</div>
+              <div class="cn-text">在农场探索时，靠近家畜和野生动物要格外小心，别吓到了它们。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Remember that it's their home, so be sure to look after it. And take your litter away with you.</div>
+              <div class="cn-text">请记住这里是它们的家，一定要用心呵护。走的时候记得把垃圾带走哦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">We hope you liked this story. You can find out more about Nosy Crow's children's books at www.nosycrow.com.</div>
+              <div class="cn-text">希望你喜欢这个故事。欢迎访问 www.nosycrow.com 了解更多 Nosy Crow 的儿童绘本。</div>
+            </div>
+            
+  </section>
+
+  <!-- 翻页导航 -->
+  <nav class="pager">
+    <a class="nav-btn prev" href="02-at-the-seaside.html"><span class="arr">‹</span> 上一本：在海边看我找到了什么</a>
+    <a class="nav-btn next" href="04-by-the-river.html">下一本：在河边看我找到了什么 <span class="arr">›</span></a>
+  </nav>
+</main>
+
+<footer>
+  《Look What I Found on the Farm》由 Nosy Crow 携手英国国民信托 (National Trust) 联合出版 · 原作版权归原作者及出版社所有<br>
+  本站双语对照内容为学习与亲子阅读整理制作 · <a href="../look-what-i-found.html">返回专区目录</a> · <a href="../index.html">返回豆芽的童书世界</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look What I Found at the Seaside ｜ 在海边看我找到了什么 · 自然探索双语绘本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#0288d1;--gradient:linear-gradient(135deg,#0288d1,#01579b)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fcf9f2;color:#33291d;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #ede3d2;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto}
+.topbar a.back{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.topbar .series-tag{font-size:13px;color:#8c7a65;background:#f2ebdc;padding:3px 12px;border-radius:999px}
+
+/* Hero */
+.hero{background:var(--gradient);color:#fff;padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:4px 16px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,4.5vw,38px);font-weight:800;line-height:1.3;margin-bottom:8px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hero .cn-title{font-size:clamp(18px,3vw,24px);opacity:.95;font-weight:600;margin-bottom:12px}
+.hero .credits{font-size:13px;opacity:.85;margin-top:6px}
+
+/* Container */
+.container{max-width:860px;margin:0 auto;padding:24px 18px 60px}
+
+/* Audio Card (TOP PRIORITY) */
+.audio-card{background:#fff;border-radius:20px;padding:24px 22px;margin:-28px auto 26px;position:relative;z-index:10;box-shadow:0 10px 30px rgba(70,50,20,.12);border:2px solid #f0e6d6}
+.audio-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.audio-title{font-size:16px;font-weight:700;color:#2c2214;display:flex;align-items:center;gap:8px}
+.audio-badge{background:#e8f5e9;color:#2e7d32;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+audio{width:100%;height:46px;margin:10px 0 14px;border-radius:999px;outline:none}
+.audio-links{display:flex;gap:12px;flex-wrap:wrap;padding-top:8px;border-top:1px dashed #ede2d0}
+.audio-link-btn{font-size:12.5px;font-weight:600;color:var(--accent);background:#fbf5ea;border:1px solid #ebdcc5;padding:6px 14px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.audio-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Cards */
+.card{background:#fff;border-radius:18px;padding:22px 24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(70,50,20,.05);border:1px solid #f0e6d6}
+.card-head{font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.synopsis-cn{font-size:15px;line-height:1.8;color:#453726;margin-bottom:10px}
+.synopsis-en{font-size:13.5px;line-height:1.7;color:#82725d;font-style:italic}
+
+/* Treasures */
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:10px}
+.tr-item{background:#faf6ec;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:1px solid #ece0cc}
+.tr-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;flex:none;margin-top:2px}
+.tr-title{font-size:14px;font-weight:700;color:#2e2213}
+.tr-title span{font-size:12.5px;color:#7a6850;font-weight:normal}
+.tr-desc{font-size:12px;color:#6b5a44;margin-top:4px;line-height:1.5}
+
+/* Script Section */
+.sec-divider{text-align:center;margin:32px 0 16px;position:relative}
+.sec-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#e5dac8;z-index:1}
+.sec-divider span{position:relative;z-index:2;background:#fcf9f2;padding:4px 18px;font-size:13px;font-weight:700;color:#8c785f;border-radius:999px;border:1px solid #e5dac8}
+
+.dialogue-card{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(60,40,15,.04);border:1px solid #f0e6d6;transition:transform .15s,box-shadow .15s}
+.dialogue-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(60,40,15,.09)}
+.dialogue-card.is-highlight{border-left:4px solid var(--accent);background:#fefdfa}
+.en-text{font-size:16px;font-weight:600;color:#22180d;line-height:1.6;margin-bottom:6px}
+.cn-text{font-size:14.5px;color:#5a4732;line-height:1.6}
+
+/* Prev/Next */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid #ede1ce}
+.nav-btn{padding:12px 18px;border-radius:12px;background:#fff;border:1.5px solid #e2d4c0;font-size:14px;font-weight:600;color:#503e28;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.nav-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-btn.disabled{opacity:.4;pointer-events:none;background:#f3ecdf;border-color:#e0d4c1}
+
+footer{text-align:center;color:#a89780;font-size:12.5px;padding:36px 20px 48px;line-height:1.8}
+footer a{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="back" href="../look-what-i-found.html">‹ 返回绘本目录</a>
+  <span class="series-tag">National Trust 英国自然探索 · 第 02 册</span>
+</header>
+
+<div class="hero">
+  <span class="badge">🐚 海岸与潮池自然宝藏</span>
+  <h1>Look What I Found at the Seaside</h1>
+  <div class="cn-title">在海边看我找到了什么</div>
+  <div class="credits">文：Moira Butterfield ｜ 图：Jesús Verona ｜ 朗诵：Kristin Atherton</div>
+</div>
+
+<main class="container">
+  <!-- 官方原版伴读音频置顶卡片 -->
+  <section class="audio-card">
+    <div class="audio-header">
+      <div class="audio-title">
+        <span>🎧 官方原版伴读配乐音频</span>
+        <span class="audio-badge">Stories Aloud 翻页伴读版</span>
+      </div>
+    </div>
+    <audio controls preload="none" src="https://nosycrowaudio.com/wp-content/uploads/2021/04/Look-What-I-Found-at-the-Seaside.mp3">您的浏览器不支持 HTML5 audio 播放器，请点击下方链接收听。</audio>
+    <div class="audio-links">
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/national-trust-look-what-i-found-at-the-seaside/" target="_blank" rel="noopener">🌐 Nosy Crow 官方伴读页 ↗</a>
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/wp-content/uploads/2021/04/Look-What-I-Found-at-the-Seaside.mp3" target="_blank" rel="noopener">⬇️ 音频原文件直链 (MP3) ↗</a>
+    </div>
+  </section>
+
+  <!-- 绘本简介 -->
+  <section class="card">
+    <div class="card-head">📖 绘本故事简介</div>
+    <div class="synopsis-cn">跟随一个充满好奇心的小朋友，一起漫步在美丽的海岸线，开启一场生动有趣的大自然寻宝之旅。从旋转卷曲的贝壳、水润圆滑的鹅卵石，到螃蟹蜕下的旧壳、神秘的“美人鱼钱包”（鲨鱼或鳐鱼卵鞘），再到古老的海胆化石和随风飘落的鸟羽，海滩上处处藏着大自然的奇迹。故事融入了生动浅显的海洋生物学与地质学知识，更温和地引导孩子们学会爱护海洋、保护自然环境，带走回忆，留下美好。</div>
+    <div class="synopsis-en">Join a curious child on an exciting coastal exploration along the seashore. From curling seashells and smooth pebbles to moulted crab shells, mysterious mermaid's purses, ancient fossils, and delicate bird feathers, the shore is full of wonderful natural treasures waiting to be discovered. Along the way, children learn fascinating natural history facts about marine life, geology, and coastal habitats, ending with an inspiring message about caring for nature and leaving the beach as pristine as we found it.</div>
+  </section>
+
+  <!-- 大自然宝藏清单 -->
+  <section class="card">
+    <div class="card-head">🌿 本册大自然寻宝物清单 (Natural Treasures)</div>
+    <div class="tr-grid">
+      
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Seashells <span>贝壳</span></div>
+            <div class="tr-desc">海螺、蛤蜊等海洋动物为了保护自己而生长出的坚硬外壳，形态千姿百态，花纹独一无二。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Pebbles & Sea Glass <span>鹅卵石与海玻璃</span></div>
+            <div class="tr-desc">历经数百万年海浪冲刷翻滚、被磨得圆润光滑的岩石碎片，以及被海水打磨得温润如玉的海玻璃。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Crab Shells <span>脱落的蟹壳</span></div>
+            <div class="tr-desc">小螃蟹长大换新衣时蜕下的空壳，常常随着潮水被轻柔地冲上海滩。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Mermaid's Purses <span>美人鱼的钱包（卵鞘）</span></div>
+            <div class="tr-desc">并非真正的人鱼钱包，而是小型鲨鱼、鳐鱼等鱼类坚韧的卵鞘，长着卷须或尖角以固定在岩石海藻上。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Fossils <span>海洋化石</span></div>
+            <div class="tr-desc">数百万年前远古动植物的遗迹，海胆、箭石、菊石以及古老鲨鱼牙齿在地层中凝固成的石头印记。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Feathers <span>鸟类羽毛</span></div>
+            <div class="tr-desc">海鸟自然脱落的羽毛，犹如一件轻盈防水的风衣，不仅助它们高飞，也为它们抵御风寒。</div>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- 中英双语对照全文 -->
+  <section>
+    <div class="card-head" style="margin:24px 4px 14px">📜 中英逐句对照完整剧本</div>
+    <div class="sec-divider"><span>📍 Introduction · 开篇信息</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">When you hear this noise, turn the page.</div>
+              <div class="cn-text">当你听到这个声音时，请翻开下一页。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look What I Found at the Seaside. Written by Moira Butterfield, and illustrated by Jesús Verona. Read by Kristin Atherton. Published by Nosy Crow.</div>
+              <div class="cn-text">《在海边看我找到了什么》。莫伊拉·巴特菲尔德 著，赫苏斯·贝罗纳 绘，克里斯汀·阿瑟顿 朗读，Nosy Crow 出版社出版。</div>
+            </div>
+            <div class="sec-divider"><span>📍 1. Seashells on the Shore · 第一幕：海滩上的贝壳</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Chasing waves and having fun. Water sparkling in the sun.</div>
+              <div class="cn-text">追逐浪花多欢畅，阳光下海水闪金光。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A curly seashell. Inside it shines bright like a pearl.</div>
+              <div class="cn-text">一只旋转卷曲的小贝壳。贝壳里面亮晶晶，像一颗璀璨的小珍珠。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One shell shaped like a little fan?</div>
+              <div class="cn-text">一个像小扇子一样的贝壳？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two tiny crabs on the sand?</div>
+              <div class="cn-text">两只在沙滩上漫步的小螃蟹？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three shells shaped like long, curly trumpets?</div>
+              <div class="cn-text">三个像长长弯弯的小喇叭一样的贝壳？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Seashells · 自然小百科：贝壳</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">There are spiky shells, and smooth shells, flat shells, long shells, and shells that twist round and round.</div>
+              <div class="cn-text">贝壳有带刺的，有光滑的，有扁扁平平的，有长条形的，还有一圈圈旋转向上的。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A seashell is armour that an animal from the sea grows to protect itself.</div>
+              <div class="cn-text">贝壳是海洋动物为了保护脆弱的自己而长出的坚硬铠甲。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Creatures such as sea snails live inside seashells. Make sure a shell is empty before you pick it up! It could be someone's house.</div>
+              <div class="cn-text">像海蜗牛这样的海洋生物就生活在贝壳里面。捡起贝壳前，一定要先看清楚它是不是空的哦！它很可能还是某个小生灵温暖的家呢。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes shells are stripy or speckled. Their pattern helps to hide them from hungry animals that swim past them on the seabed.</div>
+              <div class="cn-text">有时贝壳带有条纹或斑点。这些迷人的花纹能帮助它们伪装隐藏，躲避在海床上游来游去的饥饿捕食者。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Shells are different shapes and sizes around the world. The largest ones can grow as wide as car doors, and the smallest ones are even smaller than apple pips.</div>
+              <div class="cn-text">世界各地的贝壳形状和大小各不相同。最大的贝壳甚至能长得像车门一样宽，而最小的甚至比苹果籽还要小。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Shell shapes to spot:</div>
+              <div class="cn-text">考考你的眼力——寻找这些形状的贝壳：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Turret: A curly-whirly shell.</div>
+              <div class="cn-text">塔螺壳：一圈圈螺旋盘绕的尖顶贝壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Moon: A shell that looks like a snail's shell.</div>
+              <div class="cn-text">月螺壳：长得圆滚滚、像蜗牛壳一样的贝壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Angel wings: A shell like a pair of wings.</div>
+              <div class="cn-text">天使之翼（鸥蛤壳）：像一对洁白翅膀般的贝壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Top: A shell that looks like whipped cream.</div>
+              <div class="cn-text">陀螺螺壳：看起来像一朵甜甜的打发奶油。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Wedge: A shiny, smooth shell.</div>
+              <div class="cn-text">斧蛤壳（楔形贝壳）：光滑发亮的小贝壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Clam: A shell like a purse that opens.</div>
+              <div class="cn-text">蛤蜊壳：像一只可以自由合拢打开的小钱包。</div>
+            </div>
+            <div class="sec-divider"><span>📍 2. Rock Pools and Pebbles · 第二幕：潮汐水洼与鹅卵石</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Searching rock pools with a net. Welly boots are getting wet.</div>
+              <div class="cn-text">拿着小网探寻岩石小水洼，胶皮雨靴被打湿啦。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A round, white pebble. It feels smooth in my fingers.</div>
+              <div class="cn-text">一颗圆滚滚的白鹅卵石。拿在指尖摸一摸，光溜溜又滑润。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One speckly starfish?</div>
+              <div class="cn-text">一只布满斑点的小海星？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two little fish?</div>
+              <div class="cn-text">两条游动的小小鱼？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three swimming shrimps?</div>
+              <div class="cn-text">三只欢快游水的小虾米？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Pebbles · 自然小百科：鹅卵石</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">When you hold a pebble, you are touching something very old. It began as rock made millions of years ago. The water has tumbled and turned the rock until it has worn smooth and small.</div>
+              <div class="cn-text">当你捧起一颗鹅卵石，你正触摸着一段古老的时光。它最初是数百万年前形成的岩石。经过海水岁岁年年的翻滚冲刷与打磨，才渐渐变得小巧而光滑。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The stripes and spots on some pebbles are made by different types of rock or crystal squished together like layers in a sandwich.</div>
+              <div class="cn-text">有些鹅卵石上的条纹和斑点，是由不同种类的岩石或结晶紧紧挤压在一起形成的，就像美味三明治里层层叠叠的夹心。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">You might find some milky blue, green, or white sea glass on a beach too. It is glass that has been made smooth by the waves.</div>
+              <div class="cn-text">在海滩上，你可能还会发现乳蓝、浅绿或白色的海玻璃。它们是掉入大海的人工玻璃，在浪涛的长年抚摸下磨去了棱角，变得朦胧圆润。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes pebbles have round holes in them. Small creatures such as sea worms have scraped the holes out to make a hiding place.</div>
+              <div class="cn-text">有时鹅卵石上会有圆圆的小洞。那是海蠕虫等微小生物为了安家藏身，一点点钻凿刮擦出来的哦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Pebbles to spot:</div>
+              <div class="cn-text">考考你的眼力——寻找这些奇妙的岩石：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Quartz: A milky-coloured, glittery crystal.</div>
+              <div class="cn-text">石英：乳白色、闪烁着微光的晶体。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Quartzite: Grey with red or yellow patches.</div>
+              <div class="cn-text">石英岩：灰色底色上带有红色或黄色的斑块。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sandstone: A pebble that looks like grains of sand.</div>
+              <div class="cn-text">砂岩：表面看起来由一粒粒细腻沙粒聚成的小石子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Granite: Grey with dark grains in it.</div>
+              <div class="cn-text">花岗岩：灰色岩石中嵌着深色颗粒。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Serpentinite: Dark green and grey streaks.</div>
+              <div class="cn-text">蛇纹岩：交织着深绿与浅灰的条纹石。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Feldspar: Orangey-pink and white.</div>
+              <div class="cn-text">长石：橘粉色与白色相间的温柔石子。</div>
+            </div>
+            <div class="sec-divider"><span>📍 3. Seaweed and Crabs · 第三幕：海藻与螃蟹</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Search the seaweed, soft and curled, from an underwater world.</div>
+              <div class="cn-text">翻翻柔软卷曲的海藻丛，那是来自水下世界的美梦。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">An empty crab shell! It looks like a frilly pink dish.</div>
+              <div class="cn-text">一个空空的螃蟹壳！它看起来真像一个带花边的粉色小碟子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One message in a bottle?</div>
+              <div class="cn-text">一个装有神秘字条的漂流瓶？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two seagulls looking for food?</div>
+              <div class="cn-text">两只正在低头觅食的海鸥？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three different colours of seaweed – red, green, and brown?</div>
+              <div class="cn-text">三种不同颜色的海藻——红色的、绿色的和褐色的？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Crabs and Moulting · 自然小百科：螃蟹与蜕壳</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes crabs grow too big for their shells, just like you might grow too big for your shoes! Their old shells might get washed in by the tide.</div>
+              <div class="cn-text">有时小螃蟹长得太快，外壳就变得太小了，就像你的小脚丫长大了、鞋子变小了一样！它们脱落的旧壳常常会被潮汐推上沙滩。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The shells feel too tight, so the crab wriggles out from inside. It's called moulting.</div>
+              <div class="cn-text">旧壳太挤了，螃蟹就从里面慢慢扭动挣脱出来。这个奇妙的过程叫做“蜕壳”。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A crab has a new, soft shell under its old one. Once it has moulted, it must hide somewhere safe underwater while its new shell hardens.</div>
+              <div class="cn-text">螃蟹在旧壳下面早就长好了柔软的新壳。一旦蜕掉旧壳，它就必须藏在水下安全的地方，静静等待新壳变坚硬。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Hermit crabs don't grow their own shells. They live inside empty seashells, and swap to bigger ones as they grow.</div>
+              <div class="cn-text">寄居蟹自己可不会长硬壳。它们寄居在空的贝壳里，随着身体慢慢长大，它们会搬家换到更大的空贝壳里。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The smallest ocean crabs in the world are male pea crabs. They get their name because they are only about the size of a pea! They live in many of the world's oceans.</div>
+              <div class="cn-text">世界上最小的海洋螃蟹是雄性豆蟹。它们之所以得名，是因为它们只有一颗小豌豆那么大！它们生活在全球许多大洋之中。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Types of crab to spot:</div>
+              <div class="cn-text">考考你的眼力——辨认这些小螃蟹：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Shore: A crab with dark green or brown speckles.</div>
+              <div class="cn-text">普通滨蟹：身上布满深绿或棕褐色斑点的螃蟹。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Spider: A crab with long, spindly legs.</div>
+              <div class="cn-text">蜘蛛蟹：长着细细长长细腿的螃蟹。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Hermit: A crab inside a curly seashell.</div>
+              <div class="cn-text">寄居蟹：背着旋转贝壳安家的小蟹。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Brown: A reddish-brown crab.</div>
+              <div class="cn-text">普通黄道蟹（棕蟹）：红褐色的大螃蟹。</div>
+            </div>
+            <div class="sec-divider"><span>📍 4. Sea Caves and Mermaid's Purses · 第四幕：海蚀洞与美人鱼钱包</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">There's a cave carved by the tide. It's wet and dark – let's stay outside!</div>
+              <div class="cn-text">看那潮水冲凿出的海蚀洞，里面潮湿又幽暗——我们还是乖乖留在洞外吧！</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A mermaid's purse, with little hooks on it. What would a mermaid keep inside it?</div>
+              <div class="cn-text">一个“美人鱼的钱包”，上面还长着小勾勾。美人鱼会在里面装些什么小宝贝呢？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One pile of pebbles someone has made?</div>
+              <div class="cn-text">一堆不知是谁用鹅卵石搭起的小石塔？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two pieces of silvery driftwood washed in by the sea?</div>
+              <div class="cn-text">两根被大海冲刷上岸、闪着银灰色光泽的浮木？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three limpet shells shaped like pointy hats?</div>
+              <div class="cn-text">三个像尖尖尖顶小帽子一样的笠螺壳？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Mermaid's Purses · 自然小百科：美人鱼钱包（鱼卵鞘）</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">A mermaid's purse doesn't really belong to a mermaid. It's an egg case for a sea creature: a small shark, a skate fish, or a ray.</div>
+              <div class="cn-text">“美人鱼的钱包”其实并不属于传说中的美人鱼。它是某种海洋生物的坚硬卵鞘：比如小鲨鱼、鳐鱼或鳐类动物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The egg case has hooks that anchor it to rocks or seaweed underwater, while the baby fish grows safely inside.</div>
+              <div class="cn-text">卵鞘上长有钩须，能牢牢抓住水下的岩石或海藻，小鱼宝宝就在里面安安全全地长大。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When the fish is ready to leave, it wriggles out of one end, like money sliding out of a purse!</div>
+              <div class="cn-text">当小鱼准备好破茧而出时，就会从卵鞘的一头钻出来，就像硬币从钱包里滑出来一样！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mermaid's purses are different shapes and sizes. You might even find a big one the size of a real money purse!</div>
+              <div class="cn-text">美人鱼钱包有各种形状和大小。你甚至可能找到像真正零钱包那么大的呢！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mermaid's purses to spot:</div>
+              <div class="cn-text">考考你的眼力——寻找不同类型的卵鞘：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Skate: A small, black case.</div>
+              <div class="cn-text">鳐鱼卵鞘：一个小小的黑色匣子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Ray: A large case with long horns.</div>
+              <div class="cn-text">鲼类卵鞘：长着长长犄角的大卵鞘。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Shark: A case with curly tendrils.</div>
+              <div class="cn-text">鲨鱼卵鞘：带有卷曲缠绕卷须的卵袋。</div>
+            </div>
+            <div class="sec-divider"><span>📍 5. Cliff Paths and Fossils · 第五幕：悬崖小径与古老化石</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Up the cliff path, follow me! There's plenty more for us to see.</div>
+              <div class="cn-text">走上悬崖小径，快跟上我！还有好多好多的风景等我们去看。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A fossil of a sea urchin. It looks like a picture of a star on a rock.</div>
+              <div class="cn-text">一块海胆化石！看起来就像石头上印着一颗五角星。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One fluttery butterfly?</div>
+              <div class="cn-text">一只翩翩起舞的小蝴蝶？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two bees, busy buzzing around?</div>
+              <div class="cn-text">两只嗡嗡忙碌采蜜的小蜜蜂？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three different seaside flowers?</div>
+              <div class="cn-text">三朵姿态各异的海滨野花？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Fossils · 自然小百科：化石的秘密</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Fossils are the bodies of animals or plants that died millions of years ago. The soft parts of the body disappear, but the hard parts, such as shells, turn to rock.</div>
+              <div class="cn-text">化石是数百万年前死去的动植物遗体。身体柔软的部分消失了，但坚硬的部分（如硬壳或骨骼）逐渐变成了坚固的石头。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes you might see the fossil of a plant stem or a leaf on a rock.</div>
+              <div class="cn-text">有时你可能会在岩石上看到植物茎或树叶变成的化石印痕。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The star pattern on a sea urchin fossil is the top part of its shell.</div>
+              <div class="cn-text">海胆化石上的星星图案，其实是海胆外壳顶部的精美纹理。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A shell fossil might look round, curly, or long, just like a real shell!</div>
+              <div class="cn-text">贝壳化石有的圆溜溜，有的卷曲，有的修长，就像真正的贝壳一模一样！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Fossilised sharks' teeth sometimes turn up on beaches. They belong to sharks who lived millions of years ago. Some of the teeth fossils are as big as a hand!</div>
+              <div class="cn-text">在海滩上有时还会捡到古鲨鱼牙齿化石。它们属于数百万年前生活在海洋中的史前鲨鱼。有些牙齿化石甚至有人的手掌那么大！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Fossils to spot:</div>
+              <div class="cn-text">考考你的眼力——寻找远古化石：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Gryphaea: Once the shell of a little sea creature.</div>
+              <div class="cn-text">褶牡蛎（魔鬼脚趾甲）：曾经是一种小海生软体动物的外壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Belemnite: Shaped like a pointy pen lid.</div>
+              <div class="cn-text">箭石：形状像一支尖尖的钢笔笔帽。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Ammonite: A curly fossil.</div>
+              <div class="cn-text">菊石：旋转盘绕如羊角的古老螺纹化石。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Shark's tooth: A pointy tooth from a shark.</div>
+              <div class="cn-text">鲨鱼牙齿：来自史前鲨鱼的尖锐三角形牙齿化石。</div>
+            </div>
+            <div class="sec-divider"><span>📍 6. Over the Bay and Bird Feathers · 第六幕：眺望海湾与鸟类羽毛</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Gazing out across the bay, to ships and islands far away.</div>
+              <div class="cn-text">放眼眺望整个海湾，远方有海船和海岛相伴。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found!</div>
+              <div class="cn-text">看我找到了什么！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A long feather, pointed like a pen. Let's pretend to write in the air!</div>
+              <div class="cn-text">一根长长的羽毛，尖尖的像一支羽毛笔。让我们假装用它在空气中写字吧！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see:</div>
+              <div class="cn-text">你还能找到这些吗：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">One dog having fun?</div>
+              <div class="cn-text">一只撒欢嬉戏的小狗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Two soaring seagulls?</div>
+              <div class="cn-text">两只展翅翱翔的海鸥？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Three rabbits sitting in the sunshine?</div>
+              <div class="cn-text">三只坐在温暖阳光下的小野兔？</div>
+            </div>
+            <div class="sec-divider"><span>📍 Nature Notes: Feathers · 自然小百科：羽毛</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Feathers keep birds warm and dry, like a waterproof coat. They also help birds to fly.</div>
+              <div class="cn-text">羽毛能让鸟儿保持温暖干燥，就像一件贴身防水的风衣。羽毛还能帮助鸟儿在蓝天翱翔。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Long feathers grow on wings or tails. Short, fluffy feathers grow underneath. They help to keep the bird warm, like a cosy vest under a jumper.</div>
+              <div class="cn-text">长羽毛长在翅膀或尾巴上；短而蓬松的绒羽长在内层。绒羽就像毛衣里面的保暖背心，牢牢锁住鸟儿身体的温度。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When a bird's old feathers wear out, they drop off, and new ones grow. It doesn't hurt the bird at all!</div>
+              <div class="cn-text">当鸟儿的旧羽毛磨损老化时，它们就会自然脱落，长出崭新的羽毛。这可一点儿也不会弄疼小鸟哦！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A feather is made of lots of tiny branches, all hooked together with mini-hooks, like tiny teeth on a zip.</div>
+              <div class="cn-text">一根羽毛是由许许多多细小的羽枝构成的，它们通过微小的倒钩紧紧扣在一起，就像拉链上细密的齿合缝。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Bird feathers to spot:</div>
+              <div class="cn-text">考考你的眼力——辨识各种羽毛：</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Tail: A wide feather.</div>
+              <div class="cn-text">尾羽：宽阔平展的羽毛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Flight: A feather that is pointed at the end.</div>
+              <div class="cn-text">飞羽：末端尖尖、适合破风飞翔的羽毛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Semiplume: A short feather from a bird's body.</div>
+              <div class="cn-text">半绒羽：来自鸟儿躯体表面的短羽毛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Down: A tiny feather from underneath the bird's longer feathers.</div>
+              <div class="cn-text">绒羽：藏在长羽毛底下、轻软保暖的小细毛。</div>
+            </div>
+            <div class="sec-divider"><span>📍 7. Coastal Treasures and Caring for the Beach · 第七幕：满载而归与爱护海滩</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Goodbye beach, we're homeward bound. Look at all the things we've found!</div>
+              <div class="cn-text">再见啦，海滩，我们踏上回家的路程。快看我们找到了多少数不尽的奇珍！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Treasure!</div>
+              <div class="cn-text">大自然的珍宝！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">As you collect, be thoughtful too. Bring no harm with what you do.</div>
+              <div class="cn-text">当你采集寻宝时，也要细心体贴。千万不要伤害大自然的一草一木。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When you're exploring the seaside, make sure you help to look after it.</div>
+              <div class="cn-text">当你在海边探险游玩时，请一定要尽自己的一份力去爱护它。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Never leave any litter behind you.</div>
+              <div class="cn-text">绝不要在身后留下任何垃圾。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Only collect a shell or two, and a couple of small pebbles. Leave the rest, so that the beach stays the way it should be.</div>
+              <div class="cn-text">只带走一两只贝壳，或两三块小石子留作纪念就好。把其余的东西留在大自然里吧，这样海滩才能永远保持它最初美丽干净的模样。</div>
+            </div>
+            
+  </section>
+
+  <!-- 翻页导航 -->
+  <nav class="pager">
+    <a class="nav-btn prev" href="01-in-the-woods.html"><span class="arr">‹</span> 上一本：在森林里看我找到了什么</a>
+    <a class="nav-btn next" href="03-on-the-farm.html">下一本：在农场看我找到了什么 <span class="arr">›</span></a>
+  </nav>
+</main>
+
+<footer>
+  《Look What I Found at the Seaside》由 Nosy Crow 携手英国国民信托 (National Trust) 联合出版 · 原作版权归原作者及出版社所有<br>
+  本站双语对照内容为学习与亲子阅读整理制作 · <a href="../look-what-i-found.html">返回专区目录</a> · <a href="../index.html">返回豆芽的童书世界</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look What I Found in the Woods ｜ 在森林里看我找到了什么 · 自然探索双语绘本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#2e7d32;--gradient:linear-gradient(135deg,#2e7d32,#1b5e20)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fcf9f2;color:#33291d;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #ede3d2;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto}
+.topbar a.back{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.topbar .series-tag{font-size:13px;color:#8c7a65;background:#f2ebdc;padding:3px 12px;border-radius:999px}
+
+/* Hero */
+.hero{background:var(--gradient);color:#fff;padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:4px 16px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,4.5vw,38px);font-weight:800;line-height:1.3;margin-bottom:8px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hero .cn-title{font-size:clamp(18px,3vw,24px);opacity:.95;font-weight:600;margin-bottom:12px}
+.hero .credits{font-size:13px;opacity:.85;margin-top:6px}
+
+/* Container */
+.container{max-width:860px;margin:0 auto;padding:24px 18px 60px}
+
+/* Audio Card (TOP PRIORITY) */
+.audio-card{background:#fff;border-radius:20px;padding:24px 22px;margin:-28px auto 26px;position:relative;z-index:10;box-shadow:0 10px 30px rgba(70,50,20,.12);border:2px solid #f0e6d6}
+.audio-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.audio-title{font-size:16px;font-weight:700;color:#2c2214;display:flex;align-items:center;gap:8px}
+.audio-badge{background:#e8f5e9;color:#2e7d32;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+audio{width:100%;height:46px;margin:10px 0 14px;border-radius:999px;outline:none}
+.audio-links{display:flex;gap:12px;flex-wrap:wrap;padding-top:8px;border-top:1px dashed #ede2d0}
+.audio-link-btn{font-size:12.5px;font-weight:600;color:var(--accent);background:#fbf5ea;border:1px solid #ebdcc5;padding:6px 14px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.audio-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Cards */
+.card{background:#fff;border-radius:18px;padding:22px 24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(70,50,20,.05);border:1px solid #f0e6d6}
+.card-head{font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.synopsis-cn{font-size:15px;line-height:1.8;color:#453726;margin-bottom:10px}
+.synopsis-en{font-size:13.5px;line-height:1.7;color:#82725d;font-style:italic}
+
+/* Treasures */
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:10px}
+.tr-item{background:#faf6ec;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:1px solid #ece0cc}
+.tr-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;flex:none;margin-top:2px}
+.tr-title{font-size:14px;font-weight:700;color:#2e2213}
+.tr-title span{font-size:12.5px;color:#7a6850;font-weight:normal}
+.tr-desc{font-size:12px;color:#6b5a44;margin-top:4px;line-height:1.5}
+
+/* Script Section */
+.sec-divider{text-align:center;margin:32px 0 16px;position:relative}
+.sec-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#e5dac8;z-index:1}
+.sec-divider span{position:relative;z-index:2;background:#fcf9f2;padding:4px 18px;font-size:13px;font-weight:700;color:#8c785f;border-radius:999px;border:1px solid #e5dac8}
+
+.dialogue-card{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(60,40,15,.04);border:1px solid #f0e6d6;transition:transform .15s,box-shadow .15s}
+.dialogue-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(60,40,15,.09)}
+.dialogue-card.is-highlight{border-left:4px solid var(--accent);background:#fefdfa}
+.en-text{font-size:16px;font-weight:600;color:#22180d;line-height:1.6;margin-bottom:6px}
+.cn-text{font-size:14.5px;color:#5a4732;line-height:1.6}
+
+/* Prev/Next */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid #ede1ce}
+.nav-btn{padding:12px 18px;border-radius:12px;background:#fff;border:1.5px solid #e2d4c0;font-size:14px;font-weight:600;color:#503e28;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.nav-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-btn.disabled{opacity:.4;pointer-events:none;background:#f3ecdf;border-color:#e0d4c1}
+
+footer{text-align:center;color:#a89780;font-size:12.5px;padding:36px 20px 48px;line-height:1.8}
+footer a{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="back" href="../look-what-i-found.html">‹ 返回绘本目录</a>
+  <span class="series-tag">National Trust 英国自然探索 · 第 01 册</span>
+</header>
+
+<div class="hero">
+  <span class="badge">🌲 森林与林地自然宝藏</span>
+  <h1>Look What I Found in the Woods</h1>
+  <div class="cn-title">在森林里看我找到了什么</div>
+  <div class="credits">文：Moira Butterfield ｜ 图：Jesús Verona ｜ 朗诵：Kristin Atherton</div>
+</div>
+
+<main class="container">
+  <!-- 官方原版伴读音频置顶卡片 -->
+  <section class="audio-card">
+    <div class="audio-header">
+      <div class="audio-title">
+        <span>🎧 官方原版伴读配乐音频</span>
+        <span class="audio-badge">Stories Aloud 翻页伴读版</span>
+      </div>
+    </div>
+    <audio controls preload="none" src="https://nosycrowaudio.com/wp-content/uploads/2021/03/Look-What-I-Found-in-the-Woods.mp3">您的浏览器不支持 HTML5 audio 播放器，请点击下方链接收听。</audio>
+    <div class="audio-links">
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/national-trust-look-what-i-found-woods/" target="_blank" rel="noopener">🌐 Nosy Crow 官方伴读页 ↗</a>
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/wp-content/uploads/2021/03/Look-What-I-Found-in-the-Woods.mp3" target="_blank" rel="noopener">⬇️ 音频原文件直链 (MP3) ↗</a>
+    </div>
+  </section>
+
+  <!-- 绘本简介 -->
+  <section class="card">
+    <div class="card-head">📖 绘本故事简介</div>
+    <div class="synopsis-cn">跟随三个充满好奇心的小伙伴漫步在郁郁葱葱的树林里，展开一场趣味盎然的大自然寻宝之旅。从像魔法棒一样的弯树枝、粗糙的树皮拓印，到旋转落下的“小直升机”种子和美丽的松果，孩子们一边观察寻宝，一边探索树木生长、自我保护以及林中生灵和谐共处的自然科学奥秘，最后还学会了爱护自然、文明寻宝的环保小准则。</div>
+    <div class="synopsis-en">Join three adventurous children on a delightful nature walk through the woods as they discover natural wonders and treasures, from curly sticks and textured bark to fluttering helicopter seeds and pine cones. Along the way, fascinating nature facts reveal how trees grow, protect themselves, and support forest wildlife, concluding with gentle guidelines on nature conservation.</div>
+  </section>
+
+  <!-- 大自然宝藏清单 -->
+  <section class="card">
+    <div class="card-head">🌿 本册大自然寻宝物清单 (Natural Treasures)</div>
+    <div class="tr-grid">
+      
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A curly stick <span>一根弯弯的树枝</span></div>
+            <div class="tr-desc">在林间地面上找到，挥舞起来就像一根神奇的魔法棒。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Scratchy, lumpy bark <span>凹凸粗糙的树皮</span></div>
+            <div class="tr-desc">纹理斑驳的树皮，非常适合拿纸和蜡笔在上面做拓印。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Fallen leaves <span>掉落的树叶</span></div>
+            <div class="tr-desc">各式各样的落叶，有的能扮成滑稽的兔耳朵，有的只留下像蕾丝般精美的叶脉。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Helicopter seeds (Winged seeds / Samaras) <span>像直升机一样的翅果种子</span></div>
+            <div class="tr-desc">带有小翅膀的种子，随风飘落时像一架架小巧玲珑的直升机。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A pine cone <span>一颗松果</span></div>
+            <div class="tr-desc">木质鳞片张开、形似花瓣的松果，里面小心地保护着树木的种子。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A stripy, swirly snail shell <span>带条纹旋涡的空蜗牛壳</span></div>
+            <div class="tr-desc">在枯木旁找到的带漂亮旋涡花纹的空蜗牛壳。</div>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- 中英双语对照全文 -->
+  <section>
+    <div class="card-head" style="margin:24px 4px 14px">📜 中英逐句对照完整剧本</div>
+    <div class="sec-divider"><span>📍 1. Walking into the Woods & The Curly Stick · 1. 漫步树林与神奇弯树枝</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Follow me, I know the way. We're walking through the woods today.</div>
+              <div class="cn-text">跟着我来吧，我认得路！今天我们要穿越大树林去漫步。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A curly stick to wave like a magic wand.</div>
+              <div class="cn-text">瞧，我找到了什么！一根弯弯的小树枝，挥起来就像神奇的魔法棒。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 signpost to show the way, 2 butterflies fluttering, 3 bright yellow flowers?</div>
+              <div class="cn-text">你还能看到这些吗：1块指路的路标，2只翩翩起舞的蝴蝶，3朵明艳的黄花？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A tree's branches and leaves are called its crown. Crowns grow in different shapes and sizes.</div>
+              <div class="cn-text">树木的枝丫和叶子统称为树冠。树冠的大小和形状各不相同。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some are tall and pointed, and some spread out widely.</div>
+              <div class="cn-text">有的高耸尖挺，有的枝叶伸展，宽阔如盖。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Sometimes, trees have other plants growing on them.</div>
+              <div class="cn-text">有时候，树干上还会寄生其他植物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Look out for powdery green or orange algae, grey splodges of lichen, or cushions of furry green moss.</div>
+              <div class="cn-text">仔细找找看：有粉末状的绿藻或橙藻，有一团团灰色的地衣，还有垫子般毛茸茸的绿青苔。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Tree shapes to spot: Aspen: A long, thin trunk with leaves high up.</div>
+              <div class="cn-text">观察树木的形态：欧洲山杨：树干细长挺拔，树叶长得高高的。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Pine: Pointed like a space rocket.</div>
+              <div class="cn-text">松树：尖尖挺立，就像一枚太空火箭。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Beech: Puffy like a rain cloud.</div>
+              <div class="cn-text">山毛榉：蓬松茂密，就像一朵蓄满雨水的大云朵。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Oak: A thick trunk you can stretch your arms around.</div>
+              <div class="cn-text">橡树：粗壮的树干，张开双臂才能环抱得过来。</div>
+            </div>
+            <div class="sec-divider"><span>📍 2. Looking at Bark · 2. 近看树皮拓印与树皮的秘密</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Look at the trees up close. Which ones will we like the most?</div>
+              <div class="cn-text">走近瞧瞧这些树，哪一棵我们最喜欢？</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! Some scratchy, lumpy bark to make a rubbing on.</div>
+              <div class="cn-text">瞧，我发现了什么！凹凸粗糙的树皮，正好可以印出一张漂亮的拓画。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 twiggy bird's nest, 2 squirrels racing, 3 busy bumblebees?</div>
+              <div class="cn-text">你还能看到这些吗：1个枯枝筑起的小鸟窝，2只追逐奔跑的松鼠，3只忙忙碌碌的大蜜蜂？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Bark is similar to our own skin because it protects the inside of the tree, keeping it safe from hot sun or icy wind.</div>
+              <div class="cn-text">树皮就像我们的皮肤一样，守护着树木的内部，遮蔽酷暑烈日，抵御刺骨寒风。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Bark also protects trees from harmful insects.</div>
+              <div class="cn-text">树皮还能保护大树免受害虫的侵害。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees even make sticky resin that seeps out of bark like dollops of glue. It is full of chemicals that help to keep the insects away.</div>
+              <div class="cn-text">有些树甚至会分泌出黏糊糊的树脂，像一团团胶水般从树皮渗出。树脂里含有特殊的化学物质，能把害虫驱赶走。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">It could make you feel ill too, so it's best not to touch it.</div>
+              <div class="cn-text">接触树脂可能会让你身体不适，所以最好别碰它哦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Trees sometimes have holes in their bark where a branch once grew. Animals such as squirrels and birds use the holes as cosy hiding places.</div>
+              <div class="cn-text">树皮上长过树枝的地方有时会留下树洞。松鼠和小鸟等动物会把这些洞当作舒适温暖的藏身小窝。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Bark can be spotty or stripy, cracked or scaly. Some bark even looks like wallpaper peeling off an old wall.</div>
+              <div class="cn-text">树皮有带斑点的，有带条纹的，有的布满裂纹，有的层叠如鳞。有的树皮看起来就像从旧墙上剥落的壁纸。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Animals like deer sometimes nibble on bark. It makes a tasty snack for them, but it can damage the tree too.</div>
+              <div class="cn-text">像小鹿这样的动物有时会啃食树皮。对它们来说这是美味的零食，但却可能会伤害大树。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Types of bark to spot: Smooth with tiny grooves. Shapes like big scales. Lines that go from side to side. Lines going up and down.</div>
+              <div class="cn-text">观察树皮的纹理：光滑且带着细细凹槽的；形如大鱼鳞的；横向延伸的条纹；纵向延伸的直纹。</div>
+            </div>
+            <div class="sec-divider"><span>📍 3. Leaves and Leaf Shapes · 3. 飘落的树叶与叶片的奥秘</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Finding treasure from the trees, blown down by the rustling breeze.</div>
+              <div class="cn-text">寻找大树掉落的宝贝，那是在沙沙微风中轻轻落下的馈赠。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! Two leaves that make funny bunny ears!</div>
+              <div class="cn-text">瞧，我找到了什么！两片树叶，正好可以扮成滑稽的兔耳朵！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 robin hopping, 2 lacy spiderwebs, 3 little purple flowers?</div>
+              <div class="cn-text">你还能看到这些吗：1只蹦蹦跳跳的知更鸟，2张蕾丝般的蜘蛛网，3朵娇小的紫色小花？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Leaves are one of the most important parts of a tree. They use the sunlight to make a sugary food that helps the tree to grow.</div>
+              <div class="cn-text">叶子是大树最重要的部分之一。它们利用阳光制造出含糖的养分，帮助大树茁壮成长。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">If you hold a thin leaf up to the light, you might be able to see lots of tiny tunnels inside it.</div>
+              <div class="cn-text">如果你把一片薄薄的树叶对着光线看，可能会看到叶片内部有许多细小的“通道”。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">They carry water to the leaf, and they take the food that the leaf makes back to the tree.</div>
+              <div class="cn-text">这些叶脉将水分输送给叶片，再把叶片制造出的养料送回大树体内。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees have needles for leaves. The needles stay on their branches all year round, and these trees are called evergreen.</div>
+              <div class="cn-text">有些树的叶子是针状的。针叶一年四季都留在枝头上，这类树木被称为常绿树。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees lose their leaves in autumn. The leaves change to red, orange, yellow or brown before they fall. Trees grow new green leaves in the spring.</div>
+              <div class="cn-text">有些树会在秋天落叶。叶子在掉落前会变成红色、橙色、黄色或褐色。到了春天，大树又会抽出一片片翠绿的新叶。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Leaf shapes to spot: Oak: A leaf that has wavy edges like a wiggly worm.</div>
+              <div class="cn-text">观察树叶的形状：橡树叶：边缘呈波浪状，像一条扭来扭去的小毛虫。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Birch: A leaf that has jagged edges like the teeth of a zip.</div>
+              <div class="cn-text">桦树叶：边缘呈锯齿状，就像拉链上的细齿。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Maple skeleton: A leaf that has lost its covering, so it looks as if it is made of lace.</div>
+              <div class="cn-text">枫叶叶脉标本：叶肉已经脱落，看起来就像蕾丝织成的一样精美。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Larch: Tufts of needles on a stalk.</div>
+              <div class="cn-text">落叶松：细茎上一簇簇柔软的针叶。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Ash: Several leaves fanning out from one stem.</div>
+              <div class="cn-text">欧洲白蜡树：几片叶子从一根叶柄上呈扇形散开。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Beech: A single leaf with straight edges, shaped like an eye.</div>
+              <div class="cn-text">山毛榉叶：边缘平直的单片叶子，形状像一只明亮的小眼睛。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Pine: A stalk lined with needles.</div>
+              <div class="cn-text">松针：一根排列着针叶的小枝。</div>
+            </div>
+            <div class="sec-divider"><span>📍 4. Under the Tree & Helicopter Seeds · 4. 树底寻觅与直升机种子</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Hunting underneath a tree. What small secrets can we see?</div>
+              <div class="cn-text">在大树底下仔细找寻，我们能发现什么隐秘的小秘密？</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A seed like a tiny helicopter.</div>
+              <div class="cn-text">瞧，我找到了什么！一颗像微型直升机一样的种子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 big blackbird, 2 crawling centipedes, 3 tiny wild strawberries?</div>
+              <div class="cn-text">你还能看到这些吗：1只黑色的大鸫鸟，2只爬行的蜈蚣，3颗红红的野生小草莓？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees grow their seeds inside hard nuts. When they are ready, the nuts will fall off the tree, and you can find the seeds hidden inside.</div>
+              <div class="cn-text">有些树把种子包裹在坚硬的坚果壳里。成熟时坚果从树上落下，你就能在壳里找到种子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees grow their seeds inside soft fruit, such as apples and pears.</div>
+              <div class="cn-text">有些树把种子包裹在多汁柔软的果实里，比如苹果和梨。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees grow their seeds inside little wing shapes that blow away like tiny helicopters in the wind.</div>
+              <div class="cn-text">有些树将种子长成小翅膀的形状，在风中飞舞时就像一架架小巧的直升机。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">In the autumn, trees make seeds that fall to the ground. The seeds might one day grow into new trees.</div>
+              <div class="cn-text">秋天里，树木结出的种子纷纷落到地上。也许有一天，这些种子就会长成新的大树。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Nuts and nutcases to spot: Sweet chestnut: A nutcase with sharp spines. Hazelnut: A shiny, dark nutcase.</div>
+              <div class="cn-text">观察坚果与坚果外壳：欧洲栗（板栗）：长满尖刺的外壳；榛子：深色而有光泽的果壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Horse chestnut: A spiky nutcase with seeds inside. Beechnut: A small nutcase open like a star.</div>
+              <div class="cn-text">欧洲七叶树（马栗）：带刺的外壳，里面藏着种子；山毛榉坚果：像小星星一样裂开的小果壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Acorn: A small nut in a cup that might have a hole in it where an animal has chewed it.</div>
+              <div class="cn-text">橡果：戴着小帽子的小坚果，上面可能还留着小动物啃咬过的小孔洞。</div>
+            </div>
+            <div class="sec-divider"><span>📍 5. Woodland Shade & Pine Cones · 5. 树林阴凉处与神奇松果</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Searching in the woodland shade, finding things the trees have made.</div>
+              <div class="cn-text">在树林幽凉的树荫下寻觅，寻找大树创造出的神奇物件。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A pine cone with its scales stretched open like petals.</div>
+              <div class="cn-text">瞧，我找到了什么！一颗松果，鳞片舒展开来，就像盛开的花瓣。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 bird box where birds can nest, 2 black crows, 3 pink flowers?</div>
+              <div class="cn-text">你还能看到这些吗：1个供鸟儿筑巢的人工鸟箱，2只黑乌鸦，3朵粉红色的花？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Trees that have needles grow hard cones to protect their seeds.</div>
+              <div class="cn-text">长着针叶的树会长出坚硬的球果，用来保护它们的种子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The seeds are tucked safely under the scales of the cone, instead of inside nuts or soft fruit.</div>
+              <div class="cn-text">它们的种子被严严实实地藏在球果的鳞片下，而不是包裹在坚果壳或多汁果肉里。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The cone scales shut tightly to protect the seeds when the weather is cold or damp.</div>
+              <div class="cn-text">当天气阴冷潮湿时，松果的鳞片会紧紧闭合，保护里面的种子不受侵害。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The smallest cones are no bigger than your thumb, but the biggest ones can be as big as rugby balls.</div>
+              <div class="cn-text">最小的球果还没有你的大拇指大，但最大的球果甚至可以和橄榄球一样大！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When the weather gets warm and dry, the cone scales open, and the seeds fall out, ready to grow into new trees.</div>
+              <div class="cn-text">等到天气变得温暖干燥，球果的鳞片便会重新张开，种子落向地面，准备生根发芽长成新的大树。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Cone shapes to spot: A big, round cone with open scales. A long, thin cone. A bunch of mini cones. A short, fat cone.</div>
+              <div class="cn-text">观察球果的形状：鳞片张开的圆圆大松果；细细长长的球果；一簇紧挨着的迷你小球果；矮矮胖胖的球果。</div>
+            </div>
+            <div class="sec-divider"><span>📍 6. Dead Logs & Snail Shells · 6. 枯木与带花纹的蜗牛壳</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Spotting logs with holes inside, where little creatures like to hide.</div>
+              <div class="cn-text">寻找带树洞的枯倒木，小动物们最爱在里面躲藏。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A stripy, swirly snail shell.</div>
+              <div class="cn-text">瞧，我找到了什么！一个带着条纹旋涡的蜗牛壳。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: 1 slimy black slug, 2 spotty ladybirds, 3 shiny black beetles?</div>
+              <div class="cn-text">你还能看到这些吗：1只黏糊糊的黑蛞蝓，2只带斑点的瓢虫，3只油亮发光的黑甲虫？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A snail carries its own hiding place on its back. It can curl up and disappear inside its shell.</div>
+              <div class="cn-text">蜗牛的背上就背着自己的藏身小家。遇到危险时，它可以缩成一团藏进壳里。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Be sure to only collect empty shells, so you don't harm any little snails.</div>
+              <div class="cn-text">捡拾的时候一定要确保收集的是空的空壳，千万不要伤害到活蜗牛哦。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Snails and slugs eat leaves and bark, so the woods are a great place for them to find a meal.</div>
+              <div class="cn-text">蜗牛和蛞蝓以树叶和树皮为食，因此茂密的树林是它们大饱口福的好地方。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Beetles might crawl inside a dead log and munch up the old wood.</div>
+              <div class="cn-text">甲虫常常爬进腐朽的木头里，大口啃食陈旧的木质纤维。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Animals munch up dead wood and leaves to help keep the woods clean. They are like tiny recycling trucks, reusing the wood for their food.</div>
+              <div class="cn-text">动物们啃食枯木和落叶，帮助林地保持干净清爽。它们就像一辆辆小小的垃圾回收车，将枯木再循环利用，变成自己的食物。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Lots of woodland animals hunt other smaller creatures to eat. No wonder minibeasts like to hide!</div>
+              <div class="cn-text">林子里许多动物都会捕食比自己更小的生物。难怪这些小虫子们都喜欢把自己藏起来！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Snail shells to spot: A tiny shell that's round and flat. A shell with dark and light stripes. A shell that looks see-through, like glass. A shell that's shaped like a cone.</div>
+              <div class="cn-text">观察蜗牛壳的外观：圆圆扁扁的小壳；有深浅条纹相间的壳；像玻璃一样晶莹通透的壳；形状像圆锥体的尖尖壳。</div>
+            </div>
+            <div class="sec-divider"><span>📍 7. Homeward Bound & Responsible Treasure Collecting · 7. 满载而归与文明寻宝守则</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Goodbye, woods. We're homeward bound. Look at all the things we found!</div>
+              <div class="cn-text">再见啦，大树林！我们要回家去喽。快看我们找到的所有宝贝！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Treasure!</div>
+              <div class="cn-text">全是大自然的大宝藏！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">As you collect, be thoughtful, too. Bring no harm with what you do.</div>
+              <div class="cn-text">寻宝采集的时候，心里也要多替大自然着想，千万别让你的举动带来伤害。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When you're exploring the woods, only pick things up from the ground.</div>
+              <div class="cn-text">在树林里探险时，只能捡拾掉落在地面上的东西。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Never pick things from trees or flowers, or do anything that would harm animals.</div>
+              <div class="cn-text">千万不要去采摘活树上的枝叶、攀折花朵，或者做出伤害小动物的事情。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">That way, the woods will stay beautiful and healthy for your next visit.</div>
+              <div class="cn-text">只有这样，等到你下一次拜访时，大森林才会依然美丽如初、充满生机！</div>
+            </div>
+            
+  </section>
+
+  <!-- 翻页导航 -->
+  <nav class="pager">
+    <span class="nav-btn disabled">已是第一本</span>
+    <a class="nav-btn next" href="02-at-the-seaside.html">下一本：在海边看我找到了什么 <span class="arr">›</span></a>
+  </nav>
+</main>
+
+<footer>
+  《Look What I Found in the Woods》由 Nosy Crow 携手英国国民信托 (National Trust) 联合出版 · 原作版权归原作者及出版社所有<br>
+  本站双语对照内容为学习与亲子阅读整理制作 · <a href="../look-what-i-found.html">返回专区目录</a> · <a href="../index.html">返回豆芽的童书世界</a>
+</footer>
+
+</body>
+</html>

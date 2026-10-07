@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look What I Found by the River ｜ 在河边看我找到了什么 · 自然探索双语绘本</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#00897b;--gradient:linear-gradient(135deg,#00897b,#004d40)}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:#fcf9f2;color:#33291d;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:90;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #ede3d2;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;max-width:960px;margin:0 auto}
+.topbar a.back{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+.topbar .series-tag{font-size:13px;color:#8c7a65;background:#f2ebdc;padding:3px 12px;border-radius:999px}
+
+/* Hero */
+.hero{background:var(--gradient);color:#fff;padding:52px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero .badge{display:inline-block;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);padding:4px 16px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:14px}
+.hero h1{font-size:clamp(24px,4.5vw,38px);font-weight:800;line-height:1.3;margin-bottom:8px;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+.hero .cn-title{font-size:clamp(18px,3vw,24px);opacity:.95;font-weight:600;margin-bottom:12px}
+.hero .credits{font-size:13px;opacity:.85;margin-top:6px}
+
+/* Container */
+.container{max-width:860px;margin:0 auto;padding:24px 18px 60px}
+
+/* Audio Card (TOP PRIORITY) */
+.audio-card{background:#fff;border-radius:20px;padding:24px 22px;margin:-28px auto 26px;position:relative;z-index:10;box-shadow:0 10px 30px rgba(70,50,20,.12);border:2px solid #f0e6d6}
+.audio-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.audio-title{font-size:16px;font-weight:700;color:#2c2214;display:flex;align-items:center;gap:8px}
+.audio-badge{background:#e8f5e9;color:#2e7d32;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+audio{width:100%;height:46px;margin:10px 0 14px;border-radius:999px;outline:none}
+.audio-links{display:flex;gap:12px;flex-wrap:wrap;padding-top:8px;border-top:1px dashed #ede2d0}
+.audio-link-btn{font-size:12.5px;font-weight:600;color:var(--accent);background:#fbf5ea;border:1px solid #ebdcc5;padding:6px 14px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:6px}
+.audio-link-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Cards */
+.card{background:#fff;border-radius:18px;padding:22px 24px;margin-bottom:22px;box-shadow:0 4px 16px rgba(70,50,20,.05);border:1px solid #f0e6d6}
+.card-head{font-size:17px;font-weight:700;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.synopsis-cn{font-size:15px;line-height:1.8;color:#453726;margin-bottom:10px}
+.synopsis-en{font-size:13.5px;line-height:1.7;color:#82725d;font-style:italic}
+
+/* Treasures */
+.tr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:10px}
+.tr-item{background:#faf6ec;border-radius:12px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border:1px solid #ece0cc}
+.tr-badge{background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;flex:none;margin-top:2px}
+.tr-title{font-size:14px;font-weight:700;color:#2e2213}
+.tr-title span{font-size:12.5px;color:#7a6850;font-weight:normal}
+.tr-desc{font-size:12px;color:#6b5a44;margin-top:4px;line-height:1.5}
+
+/* Script Section */
+.sec-divider{text-align:center;margin:32px 0 16px;position:relative}
+.sec-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#e5dac8;z-index:1}
+.sec-divider span{position:relative;z-index:2;background:#fcf9f2;padding:4px 18px;font-size:13px;font-weight:700;color:#8c785f;border-radius:999px;border:1px solid #e5dac8}
+
+.dialogue-card{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(60,40,15,.04);border:1px solid #f0e6d6;transition:transform .15s,box-shadow .15s}
+.dialogue-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(60,40,15,.09)}
+.dialogue-card.is-highlight{border-left:4px solid var(--accent);background:#fefdfa}
+.en-text{font-size:16px;font-weight:600;color:#22180d;line-height:1.6;margin-bottom:6px}
+.cn-text{font-size:14.5px;color:#5a4732;line-height:1.6}
+
+/* Prev/Next */
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid #ede1ce}
+.nav-btn{padding:12px 18px;border-radius:12px;background:#fff;border:1.5px solid #e2d4c0;font-size:14px;font-weight:600;color:#503e28;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.nav-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.nav-btn.disabled{opacity:.4;pointer-events:none;background:#f3ecdf;border-color:#e0d4c1}
+
+footer{text-align:center;color:#a89780;font-size:12.5px;padding:36px 20px 48px;line-height:1.8}
+footer a{color:var(--accent);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="back" href="../look-what-i-found.html">‹ 返回绘本目录</a>
+  <span class="series-tag">National Trust 英国自然探索 · 第 04 册</span>
+</header>
+
+<div class="hero">
+  <span class="badge">🦆 溪流与河流湿地宝藏</span>
+  <h1>Look What I Found by the River</h1>
+  <div class="cn-title">在河边看我找到了什么</div>
+  <div class="credits">文：Moira Butterfield ｜ 图：Jesús Verona ｜ 朗诵：Kristin Atherton</div>
+</div>
+
+<main class="container">
+  <!-- 官方原版伴读音频置顶卡片 -->
+  <section class="audio-card">
+    <div class="audio-header">
+      <div class="audio-title">
+        <span>🎧 官方原版伴读配乐音频</span>
+        <span class="audio-badge">Stories Aloud 翻页伴读版</span>
+      </div>
+    </div>
+    <audio controls preload="none" src="https://nosycrowaudio.com/wp-content/uploads/2024/05/NT-Look-What-I-Found-By-The-River-15052024-15.08.mp3">您的浏览器不支持 HTML5 audio 播放器，请点击下方链接收听。</audio>
+    <div class="audio-links">
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/national-trust-look-what-i-found-by-the-river/" target="_blank" rel="noopener">🌐 Nosy Crow 官方伴读页 ↗</a>
+      <a class="audio-link-btn" href="https://nosycrowaudio.com/wp-content/uploads/2024/05/NT-Look-What-I-Found-By-The-River-15052024-15.08.mp3" target="_blank" rel="noopener">⬇️ 音频原文件直链 (MP3) ↗</a>
+    </div>
+  </section>
+
+  <!-- 绘本简介 -->
+  <section class="card">
+    <div class="card-head">📖 绘本故事简介</div>
+    <div class="synopsis-cn">跟随充满好奇心的小朋友一起漫步河畔，开启一场大自然寻宝之旅！沿着蜿蜒清澈的河流，孩子们不仅能观察丰富多样的水生植物、水鸟、微型小昆虫与泥地上的动物脚印，还能发现圆润的鹅卵石、蕾丝般的叶脉、软绵绵的苔藓等大自然宝藏，在探索中建立对大自然的爱护与敬畏之心。</div>
+    <div class="synopsis-en">Join a curious child on an outdoor riverside adventure as they discover the wonders of nature. Along the winding riverbank, young explorers encounter various plants, birds, insects, and animal tracks, learning fascinating nature facts while collecting natural treasures like smooth pebbles, skeleton leaves, and moss cushions.</div>
+  </section>
+
+  <!-- 大自然宝藏清单 -->
+  <section class="card">
+    <div class="card-head">🌿 本册大自然寻宝物清单 (Natural Treasures)</div>
+    <div class="tr-grid">
+      
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">Two seed heads on stalks <span>两根长茎上的种子头</span></div>
+            <div class="tr-desc">长茎上的车前草种子穗，看起来像小鼓槌，拿在手里挥舞就像在乐队里敲鼓一样好玩。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A shiny, smooth river pebble <span>一颗光滑光亮的河卵石</span></div>
+            <div class="tr-desc">经过河水长期冲刷冲刷打磨得光滑温润的小石子，静静躺在河岸边。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A little cushion of moss <span>一小块像垫子一样的苔藓</span></div>
+            <div class="tr-desc">在湿润的石墙上发现的绿色苔藓团，软绵绵、富有弹性，大小宛如一枚鸡蛋。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">A skeleton leaf <span>一片叶脉标本（蕾丝叶）</span></div>
+            <div class="tr-desc">柔软的绿色部分被小昆虫啃食后、仅留下精致网状叶脉的叶子，薄如美丽的蕾丝。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">The perfect stick <span>一根完美的赛树枝小木棍</span></div>
+            <div class="tr-desc">一根绝佳的小木棍，适合从桥上抛下，看它随着水流滑行、赢得水上赛树枝比赛。</div>
+          </div>
+        </div>
+        
+        <div class="tr-item">
+          <div class="tr-badge">宝藏</div>
+          <div class="tr-info">
+            <div class="tr-title">An animal footprint <span>一个动物脚印</span></div>
+            <div class="tr-desc">河岸潮湿泥地里留下的一枚清晰爪印，可以拓画在随身的小侦探笔记本上。</div>
+          </div>
+        </div>
+        
+    </div>
+  </section>
+
+  <!-- 中英双语对照全文 -->
+  <section>
+    <div class="card-head" style="margin:24px 4px 14px">📜 中英逐句对照完整剧本</div>
+    <div class="sec-divider"><span>📍 Riverside Exploration & Seed Heads · 河畔漫步与植物种子</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">We are going for a walk outside, exploring by the riverside.</div>
+              <div class="cn-text">我们去户外散步，沿着河畔一路探索。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! Two seed heads on stalks like tiny drumsticks.</div>
+              <div class="cn-text">看我找到了什么！长梗上的两颗种子头，就像小小的鼓槌。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One signpost, Two fish jumping, Three birds flying?</div>
+              <div class="cn-text">你还能看到：一个路标，两条跃出水面的小鱼，三只飞翔的小鸟吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">There are all sorts of different plants to spot on a river path. Some of them even grow in the water.</div>
+              <div class="cn-text">在河边的小路上，可以发现各种各样的植物。有些植物甚至直接长在水里。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Some trees like growing next to rivers. You might see a water-loving willow drooping its long leaves out over a riverbank.</div>
+              <div class="cn-text">有些树喜欢长在河岸边。你可能会看到一棵喜水的垂柳，将修长的枝叶垂拂在河堤上。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Plantains often sprout up around paths. They have cone-shaped seed heads on long stalks. They're fun to wave around as if you're drumming in a band.</div>
+              <div class="cn-text">车前草经常在小路两旁探出头来。它们细长的茎干上顶着圆锥状的穗头。拿在手里挥舞非常有趣，就像在乐队里敲鼓一样。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Watch out for nettles! They are covered in tiny hairs that will sting you if you brush against them. Ouch! The stings are to stop animals eating the nettles.</div>
+              <div class="cn-text">小心荨麻哦！它们的表面覆盖着细细的毛刺，要是碰到了就会刺痛皮肤。哎哟！这些刺毛是为了防止动物啃食它们。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Water plants to spot: Long, spiky grass. Extra-tall, brown bulrushes. Waterweed waving in the current. Flowers on plants that grow on the water.</div>
+              <div class="cn-text">值得观察的水生植物：细长尖挺的草；高高挺立的褐色香蒲；在水流中摇曳的水草；盛开在水生植物上的花朵。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Feathery Friends & River Pebbles · 羽毛朋友与河卵石</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Quack, quack! A feathery friend comes bobbing round the river bend.</div>
+              <div class="cn-text">嘎，嘎！一位长着羽毛的小朋友，在河湾处随着水波一摇一晃游了过来。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A shiny, smooth river pebble.</div>
+              <div class="cn-text">看我找到了什么！一颗光滑发亮的河滩鹅卵石。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One silvery spider's web, Two little frogs, Three darting dragonflies?</div>
+              <div class="cn-text">你还能看到：一张银色的蜘蛛网，两只小青蛙，三只穿梭飞舞的蜻蜓吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Lots of different birds live down by the river. It's a good place for them to find tasty fish, frogs, and insects.</div>
+              <div class="cn-text">许多不同种类的鸟儿生活在河畔。这里是它们捕食美味小鱼、青蛙和昆虫的好地方。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Swans and ducks have skin stretched between their toes. This is called webbing, and it makes their feet wide like paddles, perfect for swimming through the water.</div>
+              <div class="cn-text">天鹅和鸭子的脚趾之间有一层相连的皮膜，这叫做“蹼”。蹼让它们的脚掌像船桨一样宽阔，非常适合在水里划行。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Swimming birds have a layer of waterproof outer feathers to keep them dry. Hidden underneath are small, fluffy feathers to keep them warm and cosy.</div>
+              <div class="cn-text">会游泳的水鸟外层长有一层防水羽毛，能保持身体干爽；里面还藏着一层蓬松的小绒毛，让它们温暖又舒适。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Swans and ducks make their nests hidden in the riverbank reeds. They hope to lay their eggs safe from hungry creatures, such as foxes and badgers.</div>
+              <div class="cn-text">天鹅和鸭子会把巢穴藏在河岸的芦苇丛中。它们希望在那里安全地产卵，避开狐狸和獾等饥饿动物的侵扰。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">River birds to spot: Kingfisher: A bird with a long, sharp beak for grabbing fish.</div>
+              <div class="cn-text">值得观察的河鸟：翠鸟——嘴巴又长又尖，专门用来捕捉游鱼。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Moorhen: A bird with extra-long toes that are good for walking on mud.</div>
+              <div class="cn-text">黑水鸡——脚趾特别修长，擅长在松软的烂泥上行走。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Heron: A bird with very long legs for wading.</div>
+              <div class="cn-text">苍鹭——长着高挑的长腿，便于在浅水中涉水前行。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Swan: A bird that puts its head underwater as it swims to feed on plants and insects.</div>
+              <div class="cn-text">天鹅——游泳时会把头扎进水里，觅食水底的植物和水生昆虫。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Moss Cushions & Wall Minibeasts · 苔藓垫子与微型昆虫</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">The stone wall wears a grass-green cloak. It's springy moss that's soft to stroke.</div>
+              <div class="cn-text">石墙披着一件青绿色的斗篷。那是富有弹性的苔藓，摸上去软绵绵的。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A little cushion of moss, the size of an egg.</div>
+              <div class="cn-text">看我找到了什么！一小块软垫般的苔藓，有鸡蛋那么大。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One shiny beetle, Two black water birds, Three fluttering moths?</div>
+              <div class="cn-text">你还能看到：一只闪亮的甲虫，两只黑色的水鸟，三只扑闪翅膀的飞蛾吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">There are many different kinds of moss. It grows in shady, damp spots on stones, logs, and on the ground.</div>
+              <div class="cn-text">苔藓有很多不同的品种。它们生长在石头上、倒木旁和地表等阴凉湿润的地方。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mosses don't have flowers. They make their tiny seeds, called spores, inside little round capsules.</div>
+              <div class="cn-text">苔藓不会开花。它们在小小的圆形孢蒴里孕育被称为“孢子”的微小种子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When the capsules split open, the spores blow away in the wind.</div>
+              <div class="cn-text">当孢蒴裂开时，孢子就会随着微风四处飘散。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mosses don't have roots, so it's easy to pick up a small piece. It might grow for you if you take it home and put it in your own shady outdoor location.</div>
+              <div class="cn-text">苔藓没有真正的根，所以很容易取下一小片。如果你把它带回家放在阴凉的室外角落，它可能还会继续生长呢。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mosses make a good hiding place for minibeasts. You might see birds pecking at moss to try to find an insect meal.</div>
+              <div class="cn-text">苔藓是微型小虫藏身的好地方。你可能会看到小鸟在苔藓间啄来啄去，寻找藏在里面的美味虫子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Mosses to spot: Common pincushion moss: Moss with tiny threads sticking up. The balls on the end have spores inside them.</div>
+              <div class="cn-text">值得观察的苔藓：细叶白发藓（针垫苔）——直立的小细丝顶端带有圆球，球内包裹着孢子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Swan's-neck thyme-moss: Starry-shaped moss with tall swan-neck-shaped stems.</div>
+              <div class="cn-text">鹅颈匍灯藓——星形丛生，带有宛如天鹅颈项般优雅弯曲的高长茎干。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Glittering wood-moss: Moss that looks like lots of mini ferns.</div>
+              <div class="cn-text">塔藓（闪光林藓）——层层叠叠，看起来就像无数微型小蕨类。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Common haircap: Moss made of tiny pine tree shapes.</div>
+              <div class="cn-text">金发藓——每一株都像一棵小小的迷你松树。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Cushion moss: Moss that grows in round cushions.</div>
+              <div class="cn-text">垫状苔藓——长成一个个圆滚滚的小垫子。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Liverwort: A plant that looks like tiny seaweed. It's not a moss, but it often grows nearby.</div>
+              <div class="cn-text">地钱（苔类植物）——模样很像微型海藻。它虽然不是严格意义上的藓类，但常常生长在附近。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Skeleton Leaves & Woodland Munchers · 蕾丝叶脉与腐殖分解者</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Kicking leaves along the lane, crunchy dry or soft from rain.</div>
+              <div class="cn-text">踢着小路上的落叶往前走，有的干脆清脆，有的被雨水打湿得软绵绵。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! A leaf that looks as if it's made of lace.</div>
+              <div class="cn-text">看我找到了什么！一片看起来就像蕾丝花边做成的小树叶。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One shy mouse, Two shiny chestnuts, Three juicy blackberries?</div>
+              <div class="cn-text">你还能看到：一只胆小害羞的小老鼠，两颗油亮饱满的栗子，三颗多汁的黑莓吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">All sorts of things are busy munching up the damp wood and fallen leaves down by the watery banks of the river.</div>
+              <div class="cn-text">在河边潮湿的水岸旁，各种各样的小生命正忙着大口啃食湿木头和落叶。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A wet leaf might become a skeleton leaf if insects eat its soft green parts and leave its veins behind. Eventually, it will break up and blow away in the breeze.</div>
+              <div class="cn-text">湿润的叶子在昆虫吃掉柔软的绿色部分、仅留下叶脉后，就会变成“叶脉叶”。最终，它会碎裂开来，化入泥土并在微风中飘逝。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Lots of minibeasts love to eat the damp wood and leaves. Over time, they help to clear it all away like tiny cleaning machines. They need to watch out, though: frogs eat them!</div>
+              <div class="cn-text">许多微型小虫最爱吃潮湿的木头和落叶。日复一日，它们就像一台台迷你清洁机，帮助大自然清理干净。不过它们也得时刻小心：青蛙最爱抓它们吃！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Fungi like growing and feeding on wet, rotting wood. There are lots of different shapes and colours of fungi. Never touch wild fungi, because some of them are poisonous! Just look at them from afar.</div>
+              <div class="cn-text">真菌喜欢生长在潮湿腐烂的朽木上汲取养分。真菌形态各异、色彩斑斓。千万不要触摸野生真菌，因为有些是有剧毒的！静静在远处观察就好。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Leaf and wood munchers to spot: Leaf-eating millipedes have long bodies covered in tiny rings of armour.</div>
+              <div class="cn-text">值得观察的落叶与朽木食客：吃落叶的千足虫（马陆）——长长的身体覆盖着一节节细小的环形铠甲。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Woodlice are plant-chewing armoured bugs about the size of a raisin.</div>
+              <div class="cn-text">鼠妇（潮虫）——咀嚼植物碎屑的带甲小虫，体型大约只有葡萄干那么大。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">There are lots of different wood-eating beetles.</div>
+              <div class="cn-text">还有许多种类各异的蛀木甲虫。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Ants chew through damp wood to make nests of tunnels.</div>
+              <div class="cn-text">蚂蚁啃穿潮湿的朽木，建造像迷宫通道一样的蚁巢。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Floating Sticks & River Currents · 赛树枝游戏与河流奔腾</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Let's throw a stick and watch it glide beneath the bridge from side to side.</div>
+              <div class="cn-text">扔下一根小树枝，看着它从桥这一侧滑向另一侧。</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! The perfect stick to win a river race.</div>
+              <div class="cn-text">看我找到了什么！一根完美的小木棍，能在水上漂木比赛中夺得第一名。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One rabbit hiding in the grass, Two empty birds' nests, Three yellow leaves floating on the water?</div>
+              <div class="cn-text">你还能看到：一只躲在草丛里的小野兔，两个空荡荡的鸟窝，三片漂浮在水面的黄树叶吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A river carves through the ground, wearing down soil and rock as it winds its way across the land. It carries all kinds of things along with it as it flows from its source, or beginning, to the sea.</div>
+              <div class="cn-text">河流在大地上雕琢穿行，蜿蜒流经原野时冲刷磨蚀着泥土与岩石。从源头出发奔向大海的旅途上，它一路携带着各种各样的东西。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">The soil that washes into rivers can sometimes make the water look brown or even black.</div>
+              <div class="cn-text">冲刷入河的泥沙有时会让河水看起来呈褐色，甚至是黑色的。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">A river gets wider and faster as it makes its way to the sea. Then the soil it has been carrying sinks down to the riverbed and makes gloopy mud.</div>
+              <div class="cn-text">河流一路奔向大海，水面变得更开阔，水流也更湍急。随后，它携带的泥沙沉降到河床底部，变成了黏糊糊的淤泥。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Broken tree branches sometimes fall into a river. A sunken branch makes a good hiding place for fish.</div>
+              <div class="cn-text">折断的树枝有时会落入河中。沉入水底的树枝正好成为鱼儿藏匿的好居所。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Things to spot in the water: Insects that swim on top of the water. Midges that hatch from eggs in and around the water. Circles of ripples made by fish popping up to grab the insects.</div>
+              <div class="cn-text">水中值得观察的事物：在水面上划行游泳的昆虫；在水边孵化的蠓虫；鱼儿突然探出水面啄食飞虫时荡漾开来的一圈圈涟漪。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Animal Tracks & River Creatures · 泥滩脚印与河畔动物</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">Spotting footprints left behind, whose muddy paw prints will we find?</div>
+              <div class="cn-text">寻找留在地上的脚印，我们会找到谁留下的泥爪印呢？</div>
+            </div>
+            
+            <div class="dialogue-card is-highlight">
+              <div class="en-text">Look what I found! An animal footprint I can draw in my notebook.</div>
+              <div class="cn-text">看我找到了什么！一个动物脚印，我可以把它画在随身笔记本上。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Can you also see: One frog, Two signs that point the way, Three rooftops?</div>
+              <div class="cn-text">你还能看到：一只青蛙，两个指路的木牌路标，三座房屋的屋顶吗？</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Many kinds of furry animals make the riverbank their home. They might leave clues behind for you to see.</div>
+              <div class="cn-text">许多毛茸茸的小动物以河岸为家。它们可能会留下各种蛛丝马迹供你发现。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Beavers live by some rivers in Europe and North America. They gnaw down trees to build their dens, called lodges. They might even build a dam of branches across a river to make a fishing pool.</div>
+              <div class="cn-text">海狸生活在欧洲和北美洲的部分河流旁。它们啃倒树木来搭建洞穴（河狸窝）。它们甚至还会用树枝横截河流筑起水坝，形成专门的水池。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Otters feed on fish and other small river creatures. They dig an underground den called a holt near the riverbank. If you are lucky, you might see their paw prints in the mud.</div>
+              <div class="cn-text">水獭以鱼类和其他微小水生生物为食。它们在河岸附近挖掘地下的洞穴。运气好的话，你能在泥滩上看到它们留下的爪印。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">It's best not to go too close to river animals so you don't scare them. Watch them quietly from afar, and that way you will see more of the interesting things they do.</div>
+              <div class="cn-text">最好不要靠河畔野生动物太近，以免惊吓到它们。在远处安安静静地观察，反而能看到它们更多有趣的生活习性。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Small creatures, such as water rats and voles, live in burrows by the river. You might see their burrow holes in the earth. They eat the riverside plants.</div>
+              <div class="cn-text">水鼠和平原田鼠等小型动物在河边打洞安家。你也许能在泥土上发现它们的洞口。它们主要以河畔植物为食。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Riverbank prints to spot: Fox: Four petal-shaped toes in front of a rounded heel shape.</div>
+              <div class="cn-text">值得辨识的河岸脚印：狐狸——圆圆的脚跟前排列着四枚花瓣状的脚趾印。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Rabbit: Two mini front prints and two long back ones. Four little rounded toes show up.</div>
+              <div class="cn-text">野兔——两个小小的印在前，两个长长的印在后，显露出四颗圆圆的小脚趾。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Water rat or vole: Four splayed-out toes on the front paws and five on the back paws.</div>
+              <div class="cn-text">水鼠或田鼠——前爪展开四根脚趾，后爪印出五根脚趾。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Otter: Five small, pointed toes and a rounded heel shape.</div>
+              <div class="cn-text">水獭——五颗小巧尖尖的脚趾和一个圆润的脚后跟轮廓。</div>
+            </div>
+            <div class="sec-divider"><span>📍 Natural Treasure & River Care Guide · 珍爱宝藏与爱护自然指南</span></div>
+            <div class="dialogue-card">
+              <div class="en-text">We loved the river winding round, look at all the things we've found!</div>
+              <div class="cn-text">我们深深爱上了这条蜿蜒流淌的小河，看啊，我们找到了多么丰盛的宝物！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Treasure!</div>
+              <div class="cn-text">大自然的珍宝！</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">As you collect, be thoughtful too. Bring no harm with what you do.</div>
+              <div class="cn-text">在寻宝收集的同时，也要多为周围着想。千万不要因为自己的举动伤害大自然。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">When you're on a river path, always take care not to get dangerously close to the water.</div>
+              <div class="cn-text">走在河畔小径上时，时刻注意安全，切勿过于靠近危险的水域。</div>
+            </div>
+            
+            <div class="dialogue-card">
+              <div class="en-text">Be careful not to harm the animals or trees. That way, you will keep yourself safe and help your favourite river to stay beautiful.</div>
+              <div class="cn-text">小心呵护身边的小动物与草木树木。这样不仅能保护自己的安全，也能让你最喜爱的小河永远美丽如初。</div>
+            </div>
+            
+  </section>
+
+  <!-- 翻页导航 -->
+  <nav class="pager">
+    <a class="nav-btn prev" href="03-on-the-farm.html"><span class="arr">‹</span> 上一本：在农场看我找到了什么</a>
+    <a class="nav-btn next" href="05-at-the-park.html">下一本：在公园看我找到了什么 <span class="arr">›</span></a>
+  </nav>
+</main>
+
+<footer>
+  《Look What I Found by the River》由 Nosy Crow 携手英国国民信托 (National Trust) 联合出版 · 原作版权归原作者及出版社所有<br>
+  本站双语对照内容为学习与亲子阅读整理制作 · <a href="../look-what-i-found.html">返回专区目录</a> · <a href="../index.html">返回豆芽的童书世界</a>
+</footer>
+
+</body>
+</html>
