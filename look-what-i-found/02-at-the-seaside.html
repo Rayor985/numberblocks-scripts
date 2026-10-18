@@ -777,5 +777,77 @@ footer a{color:var(--accent);font-weight:600}
   }catch(e){}
 })();
 </script>
+<!-- 浮动目录 Floating TOC · 自动从页面结构生成 -->
+<style>
+.toc-fab{position:fixed;right:18px;bottom:22px;z-index:200;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:23px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.toc-fab:active{transform:scale(.9)}
+.toc-panel{position:fixed;right:14px;bottom:88px;z-index:200;width:min(300px,84vw);max-height:62vh;overflow-y:auto;background:#fff;border-radius:16px;box-shadow:0 12px 36px rgba(40,50,30,.25);border:1px solid #eee2cf;padding:10px 6px 12px;display:none;-webkit-overflow-scrolling:touch}
+.toc-panel.open{display:block}
+.toc-panel .toc-title{font-size:13px;font-weight:800;color:#8c785f;padding:8px 14px 6px;letter-spacing:2px}
+.toc-panel a{display:block;font-size:13.5px;color:#4a3d2c;padding:8px 14px;border-radius:10px;line-height:1.45}
+.toc-panel a:active{background:#f6efe1}
+.toc-panel a.toc-ch{padding-left:28px;font-size:12.8px;color:#6b5a45}
+.toc-panel a.toc-active{background:#eef5ee;color:var(--accent);font-weight:700}
+.toc-panel .toc-top{border-bottom:1px dashed #eee2cf;margin-bottom:4px;padding-bottom:6px}
+</style>
+<div class="toc-panel" id="tocPanel" aria-label="页面目录"></div>
+<button class="toc-fab" id="tocFab" aria-label="打开目录">📑</button>
+<script>
+(function(){
+  var panel=document.getElementById('tocPanel'),fab=document.getElementById('tocFab');
+  if(!panel||!fab)return;
+  var items=[];
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  var audio=document.querySelector('.audio-card');
+  if(audio){audio.id=audio.id||'toc-audio';items.push({el:audio,label:'🎧 官方伴读音频'});}
+  document.querySelectorAll('main .card').forEach(function(card){
+    var head=card.querySelector('.card-head');if(!head)return;
+    var t=head.textContent||'';
+    if(t.indexOf('故事简介')>-1){card.id=card.id||'toc-intro';items.push({el:card,label:'📖 绘本故事简介'});}
+    else if(t.indexOf('寻宝物清单')>-1){card.id=card.id||'toc-treasures';items.push({el:card,label:'🌿 寻宝物清单'});}
+  });
+  document.querySelectorAll('.sec-divider').forEach(function(div,i){
+    var span=div.querySelector('span');
+    var label=span?span.textContent.trim():('章节 '+(i+1));
+    div.id=div.id||'toc-ch-'+i;
+    items.push({el:div,label:label,cls:'toc-ch'});
+  });
+  if(!items.length){fab.style.display='none';return;}
+  var html='<div class="toc-title">📑 本页目录</div><div class="toc-top"><a href="#" data-i="-1">⬆️ 回到顶部</a></div>';
+  items.forEach(function(it,i){html+='<a href="#'+it.el.id+'" data-i="'+i+'" class="'+(it.cls||'')+'">'+esc(it.label)+'</a>';});
+  panel.innerHTML=html;
+  var links=panel.querySelectorAll('a');
+  fab.addEventListener('click',function(){panel.classList.toggle('open');});
+  document.addEventListener('click',function(e){
+    if(panel.classList.contains('open')&&!panel.contains(e.target)&&!fab.contains(e.target))panel.classList.remove('open');
+  });
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var i=a.getAttribute('data-i');
+      panel.classList.remove('open');
+      if(i==='-1'){window.scrollTo({top:0,behavior:'smooth'});return;}
+      var el=items[+i].el;
+      var y=el.getBoundingClientRect().top+window.pageYOffset-72;
+      window.scrollTo({top:y<0?0:y,behavior:'smooth'});
+    });
+  });
+  var ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){
+      var best=-1,bestY=1e9;
+      items.forEach(function(it,i){
+        var y=Math.abs(it.el.getBoundingClientRect().top-90);
+        if(y<bestY){bestY=y;best=i;}
+      });
+      links.forEach(function(a){a.classList.toggle('toc-active',a.getAttribute('data-i')==String(best));});
+      ticking=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+</script>
+
 </body>
 </html>
